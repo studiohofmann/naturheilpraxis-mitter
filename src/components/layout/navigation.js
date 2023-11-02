@@ -13,6 +13,9 @@ const Navigation = () => {
             <Link to="/services">Leistungen</Link>
           </li>
           <li>
+            <Link to="/blog">Blog</Link>
+          </li>
+          <li>
             <Link to="/contact">Kontakt</Link>
           </li>
         </ul>

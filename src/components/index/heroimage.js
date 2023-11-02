@@ -18,7 +18,7 @@ export default function Heroimage() {
 
   return (
     <GatsbyImage
-      className="h-screen bg-cover bg-center bg-no-repeat "
+      className="h-screen bg-cover bg-center bg-no-repeat"
       image={image}
       alt={data.contentfulIndex.heroimage.title}
     />
