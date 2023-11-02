@@ -7,12 +7,14 @@ import Blog from "../components/blog";
 
 const Index = () => {
   return (
-    <Layout>
-      <Heroimage />
-      <Introduction />
-      <About />
-      <Blog />
-    </Layout>
+    <div>
+      <Layout>
+        <Heroimage />
+        <Introduction />
+        <About />
+        <Blog />
+      </Layout>
+    </div>
   );
 };
 

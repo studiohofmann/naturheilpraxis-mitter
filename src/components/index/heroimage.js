@@ -7,11 +7,7 @@ export default function Heroimage() {
     query HeroimageQuery {
       contentfulIndex {
         heroimage {
-          gatsbyImageData(
-            placeholder: BLURRED
-            quality: 100
-            layout: FULL_WIDTH
-          )
+          gatsbyImageData(placeholder: BLURRED, quality: 100)
           title
         }
       }
@@ -21,8 +17,10 @@ export default function Heroimage() {
   const image = getImage(data.contentfulIndex.heroimage.gatsbyImageData);
 
   return (
-    <div className="w-2/5">
-      <GatsbyImage image={image} alt={data.contentfulIndex.heroimage.title} />
-    </div>
+    <GatsbyImage
+      className="h-screen bg-cover bg-center bg-no-repeat "
+      image={image}
+      alt={data.contentfulIndex.heroimage.title}
+    />
   );
 }
