@@ -1,23 +1,15 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import Logo from "./logo";
+import Navigation from "./navigation";
 import Footer from "./footer";
 
 const Layout = ({ pageTitle, children }) => {
   return (
     <div>
-      <div className="bg-orange-800">
+      <div className="bg-orange-800 flex justify-between">
         <Logo />
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-        </nav>
+        <Navigation />
       </div>
       <main>
         <h1>{pageTitle}</h1>

@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "../components/layout/layout";
 
-const IndexPage = () => {
+const Index = () => {
   return (
     <Layout pageTitle="Home Page">
       <p>I'm making this by following the Gatsby Tutorial.</p>
@@ -9,6 +9,6 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default Index;
 
 export const Head = () => <title>Home</title>;
