@@ -5,7 +5,7 @@ import Footer from "./footer";
 
 const Layout = ({ pageTitle, children }) => {
   return (
-    <div className="m-2">
+    <div className="">
       <div className="absolute w-full z-10 flex justify-between">
         <Logo />
         <Navigation />

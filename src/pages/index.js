@@ -6,13 +6,11 @@ import About from "../components/about";
 
 const Index = () => {
   return (
-    <div>
-      <Layout>
-        <Introduction />
-        <Heroimage />
-        <About />
-      </Layout>
-    </div>
+    <Layout>
+      <Introduction />
+      <Heroimage />
+      <About />
+    </Layout>
   );
 };
 

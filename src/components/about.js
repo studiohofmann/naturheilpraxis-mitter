@@ -21,15 +21,17 @@ export default function About() {
   const image = getImage(data.contentfulAbout.portrait.gatsbyImageData);
 
   return (
-    <div className="mt-8">
-      <h1 className=" bg-red-400 text-center">
+    <div className="mt-8 w-full bg-red-400">
+      <h1 className="bg-orange-600 text-center">
         {data.contentfulAbout.heading}
       </h1>
-      <GatsbyImage
-        className="mt-8 w-screen h-full"
-        image={image}
-        alt={data.contentfulAbout.portrait.title}
-      />
+      <div className=" bg-green-400">
+        <GatsbyImage
+          className="mt-8"
+          image={image}
+          alt={data.contentfulAbout.portrait.title}
+        />
+      </div>
       <p className="mt-8">{data.contentfulAbout.text.text}</p>
     </div>
   );
