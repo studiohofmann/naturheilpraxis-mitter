@@ -9,14 +9,23 @@ const Blog = ({ data }) => {
       {data.allContentfulBlog.edges.map(({ node }, i) => {
         const singleImage = getImage(node.image);
         return (
-          <div key={i}>
-            <div className="">{node.header}</div>
-            <div className="">{node.date}</div>
+          <div className="">
+            <h1 className="text-center">
+              {data.allContentfulContentType.edges.name}
+            </h1>
 
-            <div>
-              <GatsbyImage image={singleImage} alt={node.title} />
+            <div key={i}>
+              <h2 className="mb-3">{node.header}</h2>
+              <div className="mb-3">{node.date}</div>
+
+              <GatsbyImage
+                className="mb-3"
+                image={singleImage}
+                alt={node.title}
+              />
+
+              <p className="mb-9">{node.text.text}</p>
             </div>
-            <h1 className="">{node.text.text}</h1>
           </div>
         );
       })}
@@ -26,6 +35,14 @@ const Blog = ({ data }) => {
 
 export const query = graphql`
   query BlogQuery {
+    allContentfulContentType(filter: { name: { eq: "Blog" } }) {
+      edges {
+        node {
+          name
+        }
+      }
+    }
+
     allContentfulBlog {
       edges {
         node {

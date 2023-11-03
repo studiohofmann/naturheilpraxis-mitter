@@ -16,6 +16,7 @@ export default function Logo() {
   return (
     <Link to="/" activeClassName="active">
       <GatsbyImage
+        className="w-20"
         image={data.contentfulAsset.gatsbyImageData}
         alt={data.contentfulAsset.title}
       />
