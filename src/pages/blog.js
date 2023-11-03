@@ -1,14 +1,25 @@
 import * as React from "react";
 import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/layout/layout";
 
 const Blog = ({ data }) => {
   return (
     <Layout>
-      <div className="h-96">
-        <h1>{data.allContentfulBlog.edges.text}</h1>
-        <div>{data.allContentfulBlog.edges.text}</div>
-      </div>
+      {data.allContentfulBlog.edges.map(({ node }, i) => {
+        const singleImage = getImage(node.image);
+        return (
+          <div key={i}>
+            <div className="">{node.header}</div>
+            <div className="">{node.date}</div>
+
+            <div>
+              <GatsbyImage image={singleImage} alt={node.title} />
+            </div>
+            <h1 className="">{node.text.text}</h1>
+          </div>
+        );
+      })}
     </Layout>
   );
 };

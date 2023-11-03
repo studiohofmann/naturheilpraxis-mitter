@@ -22,7 +22,7 @@ export default function About() {
 
   return (
     <div>
-      <h1>{data.contentfulAbout.heading}</h1>
+      <h1 className="bg-red-400 text-center">{data.contentfulAbout.heading}</h1>
       <GatsbyImage
         className=""
         image={image}

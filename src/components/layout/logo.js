@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 
 export default function Logo() {
   const data = useStaticQuery(graphql`
@@ -13,9 +14,11 @@ export default function Logo() {
   `);
 
   return (
-    <GatsbyImage
-      image={data.contentfulAsset.gatsbyImageData}
-      alt={data.contentfulAsset.title}
-    />
+    <Link to="/" activeClassName="active">
+      <GatsbyImage
+        image={data.contentfulAsset.gatsbyImageData}
+        alt={data.contentfulAsset.title}
+      />
+    </Link>
   );
 }
