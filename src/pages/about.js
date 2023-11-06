@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import Layout from "../components/layout/layout";
 
 export default function About() {
   const data = useStaticQuery(graphql`
@@ -21,18 +22,20 @@ export default function About() {
   const image = getImage(data.contentfulAbout.portrait.gatsbyImageData);
 
   return (
-    <div className="mt-8 w-full bg-red-400">
-      <h1 className="bg-orange-600 text-center">
-        {data.contentfulAbout.heading}
-      </h1>
-      <div className=" bg-green-400">
+    <Layout>
+      <div className="g-red-400">
+        <h1 className="bg-orange-600 text-center">
+          {data.contentfulAbout.heading}
+        </h1>
+
         <GatsbyImage
-          className="mt-8"
+          className="m-8 bg-green-400"
           image={image}
           alt={data.contentfulAbout.portrait.title}
         />
+
+        <p className="">{data.contentfulAbout.text.text}</p>
       </div>
-      <p className="mt-8">{data.contentfulAbout.text.text}</p>
-    </div>
+    </Layout>
   );
 }

@@ -10,7 +10,7 @@ const Navigation = () => {
             <Link to="/specialization">Schwerpunkte</Link>
           </li>
           <li>
-            <Link to="/services">Leistungen</Link>
+            <Link to="/about">Über mich</Link>
           </li>
           <li>
             <Link to="/blog">Blog</Link>
