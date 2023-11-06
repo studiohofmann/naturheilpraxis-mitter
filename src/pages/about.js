@@ -23,18 +23,21 @@ export default function About() {
 
   return (
     <Layout>
-      <div className="g-red-400">
+      <div>
         <h1 className="bg-orange-600 text-center">
           {data.contentfulAbout.heading}
         </h1>
+        <div className="g-red-400 flex flex-col laptop:flex-row">
+          <GatsbyImage
+            className="m-8 bg-green-400 flex-1"
+            image={image}
+            alt={data.contentfulAbout.portrait.title}
+          />
 
-        <GatsbyImage
-          className="m-8 bg-green-400"
-          image={image}
-          alt={data.contentfulAbout.portrait.title}
-        />
-
-        <p className="">{data.contentfulAbout.text.text}</p>
+          <p className="m-8 bg-red-400 flex-1">
+            {data.contentfulAbout.text.text}
+          </p>
+        </div>
       </div>
     </Layout>
   );
