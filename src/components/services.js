@@ -24,19 +24,25 @@ export default function Services() {
 
   return (
     <div>
-      {data.allContentfulLeistungen.edges.map(({ node }, i) => {
+      {data.allContentfulContentType.edges.map(({ node }, i) => {
         return (
-          <div className="">
-            <h1 className="text-center">
-              {data.allContentfulLeistungen.edges.heading}
-            </h1>
-
-            <div key={i}>
-              <h2 className="mb-3">{node.heading}</h2>
-            </div>
+          <div key={i}>
+            <h1 className="text-center">{node.name}</h1>
           </div>
         );
       })}
+      <div className="grid grid-cols-2 gap-2">
+        {data.allContentfulLeistungen.edges.map(({ node }, i) => {
+          return (
+            <div
+              className="flex items-center justify-center aspect-square bg-red-200"
+              key={i}
+            >
+              <h2 className="">{node.heading}</h2>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
