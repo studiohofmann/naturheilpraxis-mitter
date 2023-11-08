@@ -1,23 +1,17 @@
 import Typography from "typography";
 
-const typography = new Typography({
-  baseFontSize: "18px",
-  baseLineHeight: 1.45,
-  scaleRatio: 2.2,
-  googleFonts: [
-    {
-      name: "Archivo Narrow",
-      styles: ["600"],
-    },
-    {
-      name: "Roboto",
-      styles: ["400"],
-    },
-  ],
-  headerFontFamily: ["Archivo Narrow", "sans-serif"],
-  bodyFontFamily: ["Roboto", "sans-serif"],
-});
+const theme = {
+  baseFontSize: "17px",
+  baseLineHeight: "26px",
+  scaleRatio: 2,
+};
 
-typography.injectStyles();
+const typography = new Typography(theme);
+const { scale, rhythm } = typography;
 
-export default typography;
+const { fontSize, lineHeight } = scale(0);
+// fontSize = 1rem
+// lineHeight = 1.52941rem
+
+const one = rhythm(1);
+// one = 1.52941rem
