@@ -1,12 +1,12 @@
 import * as React from "react";
 import Layout from "../components/layout/layout";
-import Contactform from "../components/contact/contactform";
+import Kontakt from "../components/kontakt";
 import Map from "../components/contact/map";
 
 const Contact = () => {
   return (
     <Layout pageTitle="Kontakt">
-      <Contactform />
+      <Kontakt />
       <Map />
     </Layout>
   );

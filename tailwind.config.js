@@ -5,6 +5,11 @@ module.exports = {
     `./src/components/**/*.{js,jsx,ts,tsx}`,
   ],
   theme: {
+    fontFamily: {
+      sans: ["Roboto", "sans-serif"],
+      body: ["PT Serif"],
+    },
+
     screens: {
       tablet: "640px",
       // => @media (min-width: 640px) { ... }

@@ -15,7 +15,7 @@ export default function Services() {
       allContentfulContentType(filter: { name: { eq: "Leistungen" } }) {
         edges {
           node {
-            name
+            description
           }
         }
       }
@@ -26,8 +26,22 @@ export default function Services() {
     <div>
       {data.allContentfulContentType.edges.map(({ node }, i) => {
         return (
-          <div key={i}>
-            <h1 className="text-center">{node.name}</h1>
+          <div className="">
+            <div className="flex bg-red-200 justify-between">
+              <h2>L</h2>
+              <h2>E</h2>
+              <h2>I</h2>
+              <h2>S</h2>
+              <h2>T</h2>
+              <h2>U</h2>
+              <h2>N</h2>
+              <h2>G</h2>
+              <h2>E</h2>
+              <h2>N</h2>
+            </div>
+            <div key={i}>
+              <p className="text-justify">{node.description}</p>
+            </div>
           </div>
         );
       })}

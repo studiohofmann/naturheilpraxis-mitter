@@ -1,17 +1,15 @@
 import * as React from "react";
 import Layout from "../components/layout/layout";
-import Heroimage from "../components/index/heroimage";
-import Introduction from "../components/index/introduction";
+import Landingpage from "../components/landingpage";
 import Services from "../components/services";
-import Contactform from "../components/contact/contactform";
+import Kontakt from "../components/kontakt";
 
 const Index = () => {
   return (
     <Layout>
-      <Introduction />
-      <Heroimage />
+      <Landingpage />
       <Services />
-      <Contactform />
+      <Kontakt />
     </Layout>
   );
 };
