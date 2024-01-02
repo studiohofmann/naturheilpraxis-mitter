@@ -6,74 +6,71 @@ export default function Contact() {
     <StaticQuery
       query={graphql`
         query KontaktQuery {
-          contentfulKontakt {
-            beschreibung {
-              beschreibung
+          allContentfulContentType(filter: { name: { eq: "Kontakt" } }) {
+            edges {
+              node {
+                name
+                description
+              }
             }
           }
         }
       `}
       render={(data) => (
-        <div>
-          <div className="flex justify-between">
-            <h2>K</h2>
-            <h2>O</h2>
-            <h2>N</h2>
-            <h2>T</h2>
-            <h2>A</h2>
-            <h2>K</h2>
-            <h2>T</h2>
-          </div>
-          <p className="text-justify">
-            {data.contentfulKontakt.beschreibung.beschreibung}
-          </p>
+        <div className="bg-green-200">
+          {data.allContentfulContentType.edges.map(({ node }, i) => {
+            return (
+              <div>
+                <h1 className="text-center">{node.name}</h1>
+                <p className="text-justify">{node.description}</p>
+              </div>
+            );
+          })}
 
           <form name="contact" method="POST" data-netlify="true" className="">
-            <p>
-              <label className="flex justify-between my-3 bg-lime-200">
-                <div className="m-8">Name</div>
-                <input
-                  className="w-6/12 bg-amber-400"
-                  type="text"
-                  name="name"
-                />
-              </label>
-            </p>
-            <p>
-              <label className="flex justify-between my-3 bg-lime-200">
-                <div className="m-8">Email</div>
-                <input
-                  className="w-6/12 bg-amber-400"
-                  type="email"
-                  name="email"
-                />
-              </label>
-            </p>
-            <p>
-              <label className="flex justify-between my-3 bg-lime-200">
-                <div className="m-8">Betreff</div>
-                <input
-                  className="w-6/12 bg-amber-400"
-                  type="email"
-                  name="email"
-                />
-              </label>
-            </p>
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="Vorname..."
+              className="rounded-md w-6/12"
+            />
 
-            <p>
-              <label className="flex justify-between my-3 bg-lime-200">
-                <div className="m-8">Nachricht</div>
-                <textarea
-                  className="w-6/12 bg-amber-400"
-                  name="message"
-                ></textarea>
-              </label>
-            </p>
-            <p>
-              <button className="bg-cyan-500 w-full my-3" type="submit">
-                Senden
-              </button>
-            </p>
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="Nachname..."
+              className="rounded-md w-6/12 "
+            />
+
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="Email.."
+              className="rounded-md w-6/12"
+            />
+
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="Betreff..."
+              className="rounded-md w-6/12"
+            />
+
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="Nachricht..."
+              className="rounded-md w-full"
+            />
+
+            <button className="bg-cyan-500 rounded-md" type="submit">
+              Senden
+            </button>
           </form>
         </div>
       )}
