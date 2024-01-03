@@ -1,15 +1,24 @@
 import * as React from "react";
-import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram";
+import { useStaticQuery, graphql } from "gatsby";
 
-const Footer = () => {
+export default function Footer() {
+  const data = useStaticQuery(graphql`
+    query FooterQuery {
+      contentfulFooter {
+        adresse {
+          adresse
+        }
+        termin {
+          termin
+        }
+      }
+    }
+  `);
+
   return (
-    <div className="bg-emerald-900">
-      <h1>Footer</h1>
-      <h1>
-        <FaInstagram />
-      </h1>
+    <div className="bg-red-200 h-64">
+      {data.contentfulFooter.adresse.adresse}
+      {data.contentfulFooter.termin.termin}
     </div>
   );
-};
-
-export default Footer;
+}

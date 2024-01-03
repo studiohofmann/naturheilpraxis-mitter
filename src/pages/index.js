@@ -1,14 +1,14 @@
 import * as React from "react";
 import Layout from "../components/layout/layout";
-import Landingpage from "../components/landingpage";
-import Services from "../components/services";
+import Startbild from "../components/startbild";
+import Leistungen from "../components/leistungen";
 import Kontakt from "../components/kontakt";
 
 const Index = () => {
   return (
     <Layout>
-      <Landingpage />
-      <Services />
+      <Startbild />
+      <Leistungen />
       <Kontakt />
     </Layout>
   );

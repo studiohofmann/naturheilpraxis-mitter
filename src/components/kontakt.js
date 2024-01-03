@@ -17,58 +17,67 @@ export default function Contact() {
         }
       `}
       render={(data) => (
-        <div className="bg-green-200">
+        <div className="bg-green-200 py-48">
           {data.allContentfulContentType.edges.map(({ node }, i) => {
             return (
-              <div>
-                <h1 className="text-center">{node.name}</h1>
-                <p className="text-justify">{node.description}</p>
+              <div className="mx-6">
+                <h1 className="mb-6">{node.name}</h1>
+                <p className="text-justify mb-12">{node.description}</p>
               </div>
             );
           })}
 
-          <form name="contact" method="POST" data-netlify="true" className="">
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            className="mx-6 grid"
+          >
             <input
               type="text"
               id="fname"
               name="firstname"
-              placeholder="Vorname..."
-              className="rounded-md w-6/12"
+              placeholder="Vorname"
+              className="w-full bg-teal-100 h-12 p-3 rounded-md mb-6"
             />
 
             <input
               type="text"
               id="fname"
               name="firstname"
-              placeholder="Nachname..."
-              className="rounded-md w-6/12 "
+              placeholder="Nachname"
+              className="w-full bg-teal-100 h-12 p-3 rounded-md mb-6"
             />
 
             <input
               type="text"
               id="fname"
               name="firstname"
-              placeholder="Email.."
-              className="rounded-md w-6/12"
+              placeholder="Email"
+              className="w-full bg-teal-100 h-12 p-3 rounded-md mb-6"
             />
 
             <input
               type="text"
               id="fname"
               name="firstname"
-              placeholder="Betreff..."
-              className="rounded-md w-6/12"
+              placeholder="Betreff"
+              className="w-full bg-teal-100 h-12 p-3 rounded-md mb-6"
             />
+            <div>
+              <input
+                type="text"
+                id="fname"
+                name="firstname"
+                placeholder="Nachricht"
+                className="w-full bg-teal-100 h-12 p-3 rounded-md mb-6"
+              />
+            </div>
 
-            <input
-              type="text"
-              id="fname"
-              name="firstname"
-              placeholder="Nachricht..."
-              className="rounded-md w-full"
-            />
-
-            <button className="bg-cyan-500 rounded-md" type="submit">
+            <button
+              className="w-4/12 h-12 bg-teal-200 rounded-full"
+              type="submit"
+            >
               Senden
             </button>
           </form>
