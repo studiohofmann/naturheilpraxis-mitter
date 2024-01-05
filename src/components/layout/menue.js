@@ -3,9 +3,9 @@ import { Link } from "gatsby";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-export default function Navigation() {
+export default function Menue() {
   const data = useStaticQuery(graphql`
-    query LogoQuery {
+    query MenueQuery {
       contentfulAsset(filename: { eq: "logo.png" }) {
         gatsbyImageData(quality: 100, placeholder: BLURRED)
         title
@@ -25,15 +25,15 @@ export default function Navigation() {
       <div className="w-full">
         <div className="absolute bottom-0 right-0 pb-2">
           <Link
-            className="mx-6 rounded-full px-3 py-2 -mb-2 border"
-            to="/specialization"
+            className="mx-6 rounded-full px-3 py-2 -mb-2 bg-zinc-300"
+            to="/schwerpunkte"
           >
             Schwerpunkte
           </Link>
-          <Link className="mr-6 rounded-full border px-3 py-2" to="/blog">
+          <Link className="mr-6 rounded-full px-3 py-2 bg-zinc-300" to="/blog">
             Blog
           </Link>
-          <Link className=" rounded-full border px-3 py-2" to="/contact">
+          <Link className=" rounded-full px-3 py-2 bg-zinc-300" to="/kontakt">
             Kontakt
           </Link>
         </div>

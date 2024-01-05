@@ -7,6 +7,7 @@ export default function Leistungen() {
       allContentfulLeistungen(sort: { order: ASC }) {
         edges {
           node {
+            heading
             leistungen {
               leistungen
             }
@@ -35,14 +36,13 @@ export default function Leistungen() {
           </div>
         );
       })}
-      <div className="grid grid-cols-2 gap-6 mx-6">
+
+      <div className="mx-6">
         {data.allContentfulLeistungen.edges.map(({ node }, i) => {
           return (
-            <div
-              className="flex items-center justify-center aspect-square bg-green-500 rounded-md"
-              key={i}
-            >
-              <h2 className="text-center m-6">{node.leistungen.leistungen}</h2>
+            <div className="my-6 bg-red-200 p-6" key={i}>
+              <h2 className="">{node.heading}</h2>
+              <p className="text-justify">{node.leistungen.leistungen}</p>
             </div>
           );
         })}

@@ -5,8 +5,8 @@ import { GatsbyImage } from "gatsby-plugin-image";
 export default function Startbild() {
   const data = useStaticQuery(graphql`
     query StartbildQuery {
-      contentfulLandingpage {
-        heroimage {
+      contentfulStartbild {
+        bild {
           gatsbyImageData(placeholder: BLURRED, quality: 100)
           title
         }
@@ -18,15 +18,16 @@ export default function Startbild() {
   `);
 
   return (
-    <div className="h-3/4 text-white flex flex-col justify-center items-center ">
+    <div className="text-white flex justify-center items-center">
       <GatsbyImage
-        className=""
-        image={data.contentfulLandingpage.heroimage.gatsbyImageData}
-        alt={data.contentfulLandingpage.heroimage.title}
+        className="h-full"
+        image={data.contentfulStartbild.bild.gatsbyImageData}
+        alt={data.contentfulStartbild.bild.title}
       />
-      <div className="absolute mx-6">
+
+      <div className="absolute mx-6 ">
         <h1 className="">
-          {data.contentfulLandingpage.beschreibung.beschreibung}
+          {data.contentfulStartbild.beschreibung.beschreibung}
         </h1>
       </div>
     </div>

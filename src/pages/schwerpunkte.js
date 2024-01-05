@@ -1,9 +1,8 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout/layout";
-import Blogpost from "../components/blogpost";
 
-const Blog = ({ data }) => {
+const Schwerpunkte = ({ data }) => {
   return (
     <Layout>
       <div className="bg-lime-200 pt-60">
@@ -15,15 +14,14 @@ const Blog = ({ data }) => {
             </div>
           );
         })}
-        <Blogpost />
       </div>
     </Layout>
   );
 };
 
 export const query = graphql`
-  query BlogQuery {
-    allContentfulContentType(filter: { name: { eq: "Blog" } }) {
+  query SchwerpunkteQuery {
+    allContentfulContentType(filter: { name: { eq: "Schwerpunkte" } }) {
       edges {
         node {
           name
@@ -34,6 +32,6 @@ export const query = graphql`
   }
 `;
 
-export default Blog;
+export default Schwerpunkte;
 
-export const Head = () => <title>Blog</title>;
+export const Head = () => <title>Schwerpunkte</title>;

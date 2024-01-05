@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/layout/layout";
 
-export default function About() {
+export default function Uebermich() {
   const data = useStaticQuery(graphql`
     query AboutQuery {
       contentfulAbout {
