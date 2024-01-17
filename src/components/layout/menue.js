@@ -25,15 +25,15 @@ export default function Menue() {
       <div className="w-full">
         <div className="absolute bottom-0 right-0 pb-2">
           <Link
-            className="mx-6 rounded-full px-3 py-2 -mb-2 bg-zinc-300"
+            className="mx-6 rounded-full px-3 py-2 -mb-2 bg-gray-300"
             to="/schwerpunkte"
           >
             Schwerpunkte
           </Link>
-          <Link className="mr-6 rounded-full px-3 py-2 bg-zinc-300" to="/blog">
+          <Link className="mr-6 rounded-full px-3 py-2 bg-gray-300" to="/blog">
             Blog
           </Link>
-          <Link className=" rounded-full px-3 py-2 bg-zinc-300" to="/kontakt">
+          <Link className=" rounded-full px-3 py-2 bg-gray-300" to="/kontakt">
             Kontakt
           </Link>
         </div>

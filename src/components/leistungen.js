@@ -31,7 +31,7 @@ export default function Leistungen() {
       {data.allContentfulContentType.edges.map(({ node }, i) => {
         return (
           <div className="mx-6">
-            <h1 className="mb-6">{node.name}</h1>
+            <h1 className="mb-6 font-bold">{node.name}</h1>
             <p className="text-justify mb-12">{node.description}</p>
           </div>
         );

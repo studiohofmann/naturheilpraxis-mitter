@@ -18,7 +18,7 @@ export default function Startbild() {
   `);
 
   return (
-    <div className="text-white flex justify-center items-center h-[75vh]">
+    <div className="text-white flex justify-center items-center h-[100vh]">
       <GatsbyImage
         className="h-full"
         image={data.contentfulStartbild.bild.gatsbyImageData}
@@ -26,7 +26,7 @@ export default function Startbild() {
       />
 
       <div className="absolute mx-6 ">
-        <h1 className="">
+        <h1 className="font-bold">
           {data.contentfulStartbild.beschreibung.beschreibung}
         </h1>
       </div>

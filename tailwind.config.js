@@ -6,8 +6,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ["Roboto", "sans-serif"],
-      body: ["PT Serif"],
+      sans: ["Rubik", "sans-serif"],
+      body: ["Rubik", "sans-serif"],
     },
 
     screens: {
