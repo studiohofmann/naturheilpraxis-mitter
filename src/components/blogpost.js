@@ -11,7 +11,7 @@ export default function Blogpost() {
             header
             date
             image {
-              gatsbyImageData
+              gatsbyImageData(placeholder: BLURRED, quality: 100, width: 500)
               title
             }
             text {
@@ -28,7 +28,7 @@ export default function Blogpost() {
       {data.allContentfulBlog.edges.map(({ node }, i) => {
         const singleImage = getImage(node.image);
         return (
-          <div className="mx-6 mt-12 p-6 rounded-md bg-gradient-to-l from-green-100 to-blue-200 shadow-lg">
+          <div className="mx-6 mt-12 p-6 rounded-md bg-gradient-to-l from-amber-50 to-stone-300 shadow-lg">
             <div key={i}>
               <h2 className="2">{node.header}</h2>
               <p className="mb-6">{node.date}</p>

@@ -15,6 +15,8 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@contentful/gatsby-transformer-contentful-richtext": "^13.1.0",
+    "@react-google-maps/api": "^2.19.2",
     "@react-icons/all-files": "^4.1.0",
     "autoprefixer": "^10.4.16",
     "gatsby": "^5.12.9",
@@ -25,7 +27,6 @@
     "gatsby-source-contentful": "^8.12.4",
     "gatsby-source-filesystem": "^5.12.1",
     "gatsby-transformer-sharp": "^5.12.3",
-    "google-map-react": "^2.2.1",
     "postcss": "^8.4.31",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

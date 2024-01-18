@@ -6,7 +6,7 @@ import Blogpost from "../components/blogpost";
 const Blog = ({ data }) => {
   return (
     <Layout>
-      <div className="bg-slate-100 py-80">
+      <div className="bg-teal-200 py-80">
         {data.allContentfulContentType.edges.map(({ node }, i) => {
           return (
             <div className="mx-6">

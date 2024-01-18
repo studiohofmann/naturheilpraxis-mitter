@@ -10,6 +10,12 @@ module.exports = {
       body: ["Rubik", "sans-serif"],
     },
 
+    extend: {
+      height: {
+        144: "36rem",
+      },
+    },
+
     screens: {
       tablet: "640px",
       // => @media (min-width: 640px) { ... }

@@ -27,10 +27,10 @@ export default function Leistungen() {
   `);
 
   return (
-    <div className="bg-lime-400 py-48">
+    <div className="bg-emerald-200 py-48">
       {data.allContentfulContentType.edges.map(({ node }, i) => {
         return (
-          <div className="mx-6">
+          <div className="mx-6 ">
             <h1 className="mb-6 font-bold">{node.name}</h1>
             <p className="text-justify mb-12">{node.description}</p>
           </div>
@@ -40,7 +40,10 @@ export default function Leistungen() {
       <div className="mx-6">
         {data.allContentfulLeistungen.edges.map(({ node }, i) => {
           return (
-            <div className="my-6 bg-red-200 p-6" key={i}>
+            <div
+              className="mt-12 p-6 rounded-lg bg-gradient-to-r from-stone-300 to-teal-200 shadow-lg"
+              key={i}
+            >
               <h2 className="">{node.heading}</h2>
               <p className="text-justify">{node.leistungen.leistungen}</p>
             </div>

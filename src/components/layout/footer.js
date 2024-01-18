@@ -5,42 +5,36 @@ import { Link } from "gatsby";
 export default function Footer() {
   const data = useStaticQuery(graphql`
     query FooterQuery {
-      contentfulFooter {
+      contentfulKontakt {
         adresse {
           adresse
         }
-        termin {
-          termin
+      }
+      contentfulFooter {
+        copyright {
+          copyright
         }
       }
     }
   `);
 
+  const today = new Date();
+
   return (
-    <div className="pt-48 pb-6">
-      <div className="mx-6 mb-24">
-        <div className="mb-6">{data.contentfulFooter.termin.termin}</div>
-        <Link to="/contact">
-          <button
-            className="w-4/12 h-12 bg-teal-200 rounded-full"
-            type="submit"
-          >
-            Termin Buchen
-          </button>
-        </Link>
-      </div>
+    <div className="pt-48 pb-6 bg-amber-50">
       <div className="flex mx-6">
-        <div className="bg-red-200 flex-1">
-          {data.contentfulFooter.adresse.adresse}
+        <div className="p-6 shadow-lg rounded-md bg-gradient-to-r from-slate-700 to-slate-800">
+          {data.contentfulKontakt.adresse.adresse}
         </div>
 
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col shadow-lg rounded-md p-6 ml-6 bg-gradient-to-r from-slate-700 to-slate-800">
           <Link to="/specialization">Schwerpunkte</Link>
           <Link to="/blog">Blog</Link>
           <Link to="/contact">Kontakt</Link>
           <Link to="/contact">Impressum</Link>
         </div>
       </div>
+      <p className="m-6">{today.getFullYear()}</p>
     </div>
   );
 }
