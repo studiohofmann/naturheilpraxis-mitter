@@ -34,7 +34,7 @@ export default function Footer() {
           <Link to="/contact">Impressum</Link>
         </div>
       </div>
-      <p className="m-6">{today.getFullYear()}</p>
+      <p className="m-6">{today.getFullYear()}Hello</p>
     </div>
   );
 }
