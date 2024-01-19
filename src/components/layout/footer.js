@@ -21,20 +21,50 @@ export default function Footer() {
   const today = new Date();
 
   return (
-    <div className="pt-48 pb-6 bg-amber-50">
-      <div className="flex mx-6">
-        <div className="p-6 shadow-lg rounded-md bg-gradient-to-r from-slate-700 to-slate-800">
+    <div className="bg-amber-200 pt-20 pb-4">
+      <div className="flex">
+        <p className="shadow-lg rounded-md bg-neutral-500 w-1/2 p-4 ml-4 mr-2">
           {data.contentfulKontakt.adresse.adresse}
-        </div>
+        </p>
 
-        <div className="flex-1 flex flex-col shadow-lg rounded-md p-6 ml-6 bg-gradient-to-r from-slate-700 to-slate-800">
-          <Link to="/specialization">Schwerpunkte</Link>
-          <Link to="/blog">Blog</Link>
-          <Link to="/contact">Kontakt</Link>
-          <Link to="/contact">Impressum</Link>
+        <div className="flex flex-wrap flex-row-reverse bg-orange-200 w-1/2 p-4 ml-2 mr-4 gap-4 shadow-lg rounded-md">
+          <button className="bg-slate-300 rounded-full py-2 px-4" type="submit">
+            <Link className="rounded-full" to="/schwerpunkte">
+              Schwerpunkte
+            </Link>
+          </button>
+
+          <button className="bg-slate-300 rounded-full py-2 px-4" type="submit">
+            <Link className="rounded-full" to="/blog">
+              Blog
+            </Link>
+          </button>
+
+          <button className="bg-slate-300 rounded-full py-2 px-4" type="submit">
+            <Link className="rounded-full" to="/kontakt">
+              Impressum
+            </Link>
+          </button>
+
+          <button className="bg-slate-300 rounded-full py-2 px-4" type="submit">
+            <Link className="rounded-full" to="/kontakt">
+              Kontakt
+            </Link>
+          </button>
+
+          <button className="bg-slate-300 rounded-full py-2 px-4" type="submit">
+            <Link className="rounded-full" to="/kontakt">
+              Über mich
+            </Link>
+          </button>
         </div>
       </div>
-      <p className="m-6">{today.getFullYear()}Hello</p>
+      <div className="bg-orange-500 mx-4 mt-4 p-4 shadow-lg rounded-md">
+        <p className="">
+          {today.getFullYear()}
+          {data.contentfulFooter.copyright.copyright}
+        </p>
+      </div>
     </div>
   );
 }

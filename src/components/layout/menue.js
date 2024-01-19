@@ -15,28 +15,37 @@ export default function Menue() {
 
   return (
     <div className="flex absolute z-10 mx-6 mt-6 width-full left-0 right-0">
-      <Link to="/" activeClassName="">
+      <Link to="/" activeClassName="w-1/4">
         <GatsbyImage
-          className="w-20"
+          className=""
           image={data.contentfulAsset.gatsbyImageData}
           alt={data.contentfulAsset.title}
         />
       </Link>
-      <div className="w-full">
-        <div className="absolute bottom-0 right-0 pb-2">
-          <Link
-            className="mx-6 rounded-full px-3 py-2 -mb-2 bg-gray-300"
-            to="/schwerpunkte"
-          >
+      <div className="w-3/4 flex flex-wrap gap-5 flex-row-reverse">
+        <button className="bg-slate-300 rounded-full py-2 px-5" type="submit">
+          <Link className="rounded-full" to="/schwerpunkte">
             Schwerpunkte
           </Link>
-          <Link className="mr-6 rounded-full px-3 py-2 bg-gray-300" to="/blog">
+        </button>
+
+        <button className="bg-slate-300 rounded-full py-2 px-5" type="submit">
+          <Link className="rounded-full" to="/blog">
             Blog
           </Link>
-          <Link className=" rounded-full px-3 py-2 bg-gray-300" to="/kontakt">
+        </button>
+
+        <button className="bg-slate-300 rounded-full py-2 px-5" type="submit">
+          <Link className="rounded-full" to="/kontakt">
             Kontakt
           </Link>
-        </div>
+        </button>
+
+        <button className="bg-slate-300 rounded-full py-2 px-5" type="submit">
+          <Link className="rounded-full" to="/kontakt">
+            Über mich
+          </Link>
+        </button>
       </div>
     </div>
   );
