@@ -24,7 +24,7 @@ export default function Footer() {
   return (
     <div className="bg-amber-200 pt-20 pb-4">
       <div className="flex">
-        <div className="shadow-lg rounded-md bg-neutral-500 w-1/2 p-4 ml-4 mr-2">
+        <div className="shadow-lg rounded-md bg-neutral-200 w-1/2 p-4 ml-4 mr-2">
           <h2>{data.contentfulAdresse.name}</h2>
           <p>{data.contentfulAdresse.adresse.adresse}</p>
         </div>
