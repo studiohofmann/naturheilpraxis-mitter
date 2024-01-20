@@ -1,20 +1,13 @@
 import * as React from "react";
-
-import Menue from "./menue";
+import Navigation from "./navigation";
 import Footer from "./footer";
 
-const Layout = ({ pageTitle, children }) => {
+export default function Layout({ children }) {
   return (
-    <div className="">
-      <div className="absolute w-full h-full z-10 flex justify-between"></div>
-      <main>
-        <Menue />
-        <h1>{pageTitle}</h1>
-        {children}
-      </main>
+    <div>
+      <Navigation />
+      {children}
       <Footer />
     </div>
   );
-};
-
-export default Layout;
+}

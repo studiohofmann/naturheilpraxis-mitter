@@ -2,14 +2,13 @@ import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-export default function Blogpost() {
+export default function Schwerpunktepost() {
   const data = useStaticQuery(graphql`
-    query BlogpostQuery {
-      allContentfulBlogpost {
+    query SchwerpunktepostQuery {
+      allContentfulSchwerpunktepost {
         edges {
           node {
             ueberschrift
-            datum
             bild {
               gatsbyImageData(quality: 100, placeholder: BLURRED)
             }
@@ -24,7 +23,7 @@ export default function Blogpost() {
 
   return (
     <div>
-      {data.allContentfulBlogpost.edges.map(({ node }, i) => {
+      {data.allContentfulSchwerpunktepost.edges.map(({ node }, i) => {
         const singleImage = getImage(node.bild);
         return (
           <div className="mx-6 mt-12 p-6 rounded-md bg-gradient-to-l from-amber-50 to-stone-300 shadow-lg">

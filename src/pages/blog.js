@@ -7,14 +7,13 @@ const Blog = ({ data }) => {
   return (
     <Layout>
       <div className="bg-teal-200 py-80">
-        {data.allContentfulContentType.edges.map(({ node }, i) => {
-          return (
-            <div className="mx-6">
-              <h1 className="mb-6">{node.name}</h1>
-              <p className="mb-40 text-justify ">{node.description}</p>
-            </div>
-          );
-        })}
+        <div className="mx-4">
+          <h1 className="mb-4">{data.contentfulBlog.ueberschrift}</h1>
+          <p className="mb-40 text-justify ">
+            {data.contentfulBlog.beschreibung.beschreibung}
+          </p>
+        </div>
+
         <Blogpost />
       </div>
     </Layout>
@@ -23,12 +22,10 @@ const Blog = ({ data }) => {
 
 export const query = graphql`
   query BlogQuery {
-    allContentfulContentType(filter: { name: { eq: "Blog" } }) {
-      edges {
-        node {
-          name
-          description
-        }
+    contentfulBlog {
+      ueberschrift
+      beschreibung {
+        beschreibung
       }
     }
   }

@@ -1,19 +1,19 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout/layout";
+import Schwerpunktepost from "../components/schwerpunktepost";
 
 const Schwerpunkte = ({ data }) => {
   return (
     <Layout>
-      <div className="bg-lime-200 pt-60">
-        {data.allContentfulContentType.edges.map(({ node }, i) => {
-          return (
-            <div className="mx-6">
-              <h1 className="mb-6">{node.name}</h1>
-              <p className="text-justify mb-12">{node.description}</p>
-            </div>
-          );
-        })}
+      <div className="bg-teal-200 py-80">
+        <div className="mx-4">
+          <h1 className="mb-4">{data.contentfulSchwerpunkte.ueberschrift}</h1>
+          <p className="mb-40 text-justify ">
+            {data.contentfulSchwerpunkte.beschreibung.beschreibung}
+          </p>
+        </div>
+        <Schwerpunktepost />
       </div>
     </Layout>
   );
@@ -21,12 +21,10 @@ const Schwerpunkte = ({ data }) => {
 
 export const query = graphql`
   query SchwerpunkteQuery {
-    allContentfulContentType(filter: { name: { eq: "Schwerpunkte" } }) {
-      edges {
-        node {
-          name
-          description
-        }
+    contentfulSchwerpunkte {
+      ueberschrift
+      beschreibung {
+        beschreibung
       }
     }
   }

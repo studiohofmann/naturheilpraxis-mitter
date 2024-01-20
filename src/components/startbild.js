@@ -18,7 +18,7 @@ export default function Startbild() {
   `);
 
   return (
-    <div className="flex justify-center items-end h-[90vh]">
+    <div className="flex justify-center items-end h-[80vh]">
       <GatsbyImage
         className="h-full"
         image={data.contentfulStartbild.bild.gatsbyImageData}

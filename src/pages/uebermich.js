@@ -1,44 +1,41 @@
 import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { graphql } from "gatsby";
 import Layout from "../components/layout/layout";
+import { GatsbyImage } from "gatsby-plugin-image";
 
-export default function Uebermich() {
-  const data = useStaticQuery(graphql`
-    query AboutQuery {
-      contentfulAbout {
-        heading
-        portrait {
-          gatsbyImageData
-          title
-        }
-        text {
-          text
-        }
-      }
-    }
-  `);
-
-  const image = getImage(data.contentfulAbout.portrait.gatsbyImageData);
-
+const Uebermich = ({ data }) => {
   return (
     <Layout>
-      <div>
-        <h1 className="bg-orange-600 text-center">
-          {data.contentfulAbout.heading}
-        </h1>
-        <div className="g-red-400 flex flex-col laptop:flex-row">
+      <div className="bg-teal-200 pt-80 pb-40">
+        <div className="px-5">
+          <h1 className="mb-4">{data.contentfulUebermich.ueberschrift}</h1>
           <GatsbyImage
-            className="m-8 bg-green-400 flex-1"
-            image={image}
-            alt={data.contentfulAbout.portrait.title}
+            className="mb-4"
+            image={data.contentfulUebermich.bild.gatsbyImageData}
+            alt={data.contentfulUebermich.bild.title}
           />
-
-          <p className="m-8 bg-red-400 flex-1">
-            {data.contentfulAbout.text.text}
-          </p>
+          <p>{data.contentfulUebermich.text.text}</p>
         </div>
       </div>
     </Layout>
   );
-}
+};
+
+export const query = graphql`
+  query UebermichQuery {
+    contentfulUebermich {
+      ueberschrift
+      bild {
+        gatsbyImageData(quality: 100, placeholder: BLURRED)
+        title
+      }
+      text {
+        text
+      }
+    }
+  }
+`;
+
+export default Uebermich;
+
+export const Head = () => <title>Uebermich</title>;

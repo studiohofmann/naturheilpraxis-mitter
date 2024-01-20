@@ -5,7 +5,8 @@ import { Link } from "gatsby";
 export default function Footer() {
   const data = useStaticQuery(graphql`
     query FooterQuery {
-      contentfulKontakt {
+      contentfulAdresse {
+        name
         adresse {
           adresse
         }
@@ -23,9 +24,10 @@ export default function Footer() {
   return (
     <div className="bg-amber-200 pt-20 pb-4">
       <div className="flex">
-        <p className="shadow-lg rounded-md bg-neutral-500 w-1/2 p-4 ml-4 mr-2">
-          {data.contentfulKontakt.adresse.adresse}
-        </p>
+        <div className="shadow-lg rounded-md bg-neutral-500 w-1/2 p-4 ml-4 mr-2">
+          <h2>{data.contentfulAdresse.name}</h2>
+          <p>{data.contentfulAdresse.adresse.adresse}</p>
+        </div>
 
         <div className="flex flex-wrap flex-row-reverse bg-orange-200 w-1/2 p-4 ml-2 mr-4 gap-4 shadow-lg rounded-md">
           <button className="bg-slate-300 rounded-full py-2 px-4" type="submit">

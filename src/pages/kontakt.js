@@ -2,7 +2,7 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout/layout";
 import Formular from "../components/formular";
-import Map from "../components/map";
+import Anfahrt from "../components/anfahrt";
 
 const Kontakt = ({ data }) => {
   return (
@@ -15,15 +15,7 @@ const Kontakt = ({ data }) => {
           </p>
           <Formular />
         </div>
-      </div>
-      <div className="bg-amber-50">
-        <div className="px-5 py-40">
-          <h1 className="mb-5">{data.contentfulKontakt.anfahrtueberschrift}</h1>
-          <p className="text-justify mb-10">
-            {data.contentfulKontakt.anfahrtbeschreibung.anfahrtbeschreibung}
-          </p>
-          <Map />
-        </div>
+        <Anfahrt />
       </div>
     </Layout>
   );
@@ -35,10 +27,6 @@ export const query = graphql`
       ueberschrift
       beschreibung {
         beschreibung
-      }
-      anfahrtueberschrift
-      anfahrtbeschreibung {
-        anfahrtbeschreibung
       }
     }
   }
