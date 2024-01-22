@@ -17,7 +17,7 @@ main {
 @layer base {
 p {
   @apply font-light;
-  @apply text-gray-700;
+  @apply text-gray-500;
 }
 
 

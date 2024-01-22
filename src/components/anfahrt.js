@@ -16,8 +16,8 @@ export default function Anfahrt() {
 
   return (
     <div className="bg-amber-50 pt-20  pb-20 ">
-      <div className="bg-gradient-to-r from-teal-200 to-emerald-200 mx-5 p-5 shadow-lg rounded-md">
-        <h1 className="">{data.contentfulAnfahrt.ueberschrift}</h1>
+      <div className="mx-4 mb-10">
+        <h1 className="mb-4">{data.contentfulAnfahrt.ueberschrift}</h1>
         <p>{data.contentfulAnfahrt.beschreibung.beschreibung}</p>
       </div>
       <Map />

@@ -16,12 +16,12 @@ export default function Termin() {
   `);
 
   return (
-    <div className="bg-amber-50 pt-20  pb-20 ">
-      <div className="bg-gradient-to-r from-teal-200 to-emerald-200 mx-5 p-5 shadow-lg rounded-md">
+    <div className="bg-sky-200 pt-20  pb-20 ">
+      <div className="bg-amber-50 mx-5 p-5 shadow-lg rounded-md">
         <p className="">{data.contentfulTermin.beschreibung.beschreibung}</p>
 
         <button
-          className="w-4/12 h-12 bg-stone-300 rounded-full mt-5"
+          className="w-4/12 h-12 bg-red-200 rounded-full mt-5"
           type="submit"
         >
           {data.contentfulTermin.button.button}

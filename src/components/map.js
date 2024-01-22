@@ -9,7 +9,7 @@ const Map = () => {
   const center = useMemo(() => ({ lat: 47.3987, lng: 8.5335 }), []);
 
   return (
-    <div className="h-144 w-full">
+    <div className="h-144 left-0 right-0  mx-4 mb-20">
       {!isLoaded ? (
         <p>Loading...</p>
       ) : (

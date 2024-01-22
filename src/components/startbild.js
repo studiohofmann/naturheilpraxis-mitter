@@ -25,7 +25,7 @@ export default function Startbild() {
         alt={data.contentfulStartbild.bild.title}
       />
 
-      <div className="absolute rounded-md left-0 right-0 bg-gradient-to-br from-teal-400 to-rose-300 mx-5 mb-20 p-5 shadow-lg">
+      <div className="absolute left-0 right-0  mx-5 mb-20 p-5 ">
         <h1 className="text-amber-50">{data.contentfulStartbild.text.text}</h1>
       </div>
     </div>

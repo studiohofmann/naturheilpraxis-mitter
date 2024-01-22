@@ -24,7 +24,7 @@ export default function Leistungen() {
   `);
 
   return (
-    <div className="bg-emerald-200 py-40 p-5">
+    <div className="bg-amber-50 py-40 p-5">
       <h1 className="mb-4">{data.contentfulLeistungen.ueberschrift}</h1>
       <p className="mb-20">
         {data.contentfulLeistungen.beschreibung.beschreibung}
@@ -33,7 +33,8 @@ export default function Leistungen() {
         {data.allContentfulLeistungenpost.edges.map(({ node }, i) => {
           return (
             <div
-              className="p-4 mb-8 rounded-lg bg-gradient-to-r from-stone-300 to-teal-200 shadow-lg"
+              className="p-4 mb-8 rounded-lg bg-sky-200
+             shadow-lg"
               key={i}
             >
               <h2 className="mb-4">{node.ueberschrift}</h2>
