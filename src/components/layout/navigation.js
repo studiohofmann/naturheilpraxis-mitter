@@ -14,51 +14,23 @@ export default function Menue() {
   `);
 
   return (
-    <div className="px-4 pt-4 flex absolute z-10">
+    <div className="px-4 pt-4 flex justify-between absolute z-10 w-full">
       <Link to="/" activeClassName="">
         <GatsbyImage
-          className=""
+          className="w-24"
           image={data.contentfulAsset.gatsbyImageData}
           alt={data.contentfulAsset.title}
         />
       </Link>
-      <div className="-mt-2 -mr-2 ml-2 w-full">
-        <button
-          className="bg-slate-300 rounded-full py-1 px-4 m-2 float-right"
-          type="submit"
-        >
-          <Link className="rounded-full" to="/schwerpunkte">
-            Schwerpunkte
-          </Link>
-        </button>
 
-        <button
-          className="bg-slate-300 rounded-full py-1 px-4 m-2 float-right"
-          type="submit"
-        >
-          <Link className="rounded-full" to="/blog">
-            Blog
-          </Link>
-        </button>
-
-        <button
-          className="bg-slate-300 rounded-full py-1 px-4 m-2 float-right"
-          type="submit"
-        >
-          <Link className="rounded-full" to="/kontakt">
-            Kontakt
-          </Link>
-        </button>
-
-        <button
-          className="bg-slate-300 rounded-full py-1 px-4 m-2 float-right"
-          type="submit"
-        >
-          <Link className="rounded-full" to="/uebermich">
-            Über mich
-          </Link>
-        </button>
-      </div>
+      <button
+        className="bg-slate-400 h-10 px-8 rounded-md shadow-lg"
+        type="submit"
+      >
+        <Link className="" to="/schwerpunkte">
+          Menü
+        </Link>
+      </button>
     </div>
   );
 }

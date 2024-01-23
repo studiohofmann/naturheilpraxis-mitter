@@ -5,6 +5,7 @@ export default function Termin() {
   const data = useStaticQuery(graphql`
     query TerminQuery {
       contentfulTermin {
+        ueberschrift
         beschreibung {
           beschreibung
         }
@@ -16,8 +17,9 @@ export default function Termin() {
   `);
 
   return (
-    <div className="bg-sky-200 pt-20  pb-20 ">
-      <div className="bg-amber-50 mx-5 p-5 shadow-lg rounded-md">
+    <div className="px-4 bg-green-200 pt-20  pb-20 ">
+      <h1 className="mb-8">{data.contentfulTermin.ueberschrift}</h1>
+      <div className="bg-gradient-to-tr from-amber-50 to-amber-100 p-4 shadow-lg rounded-md">
         <p className="">{data.contentfulTermin.beschreibung.beschreibung}</p>
 
         <button

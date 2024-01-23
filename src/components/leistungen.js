@@ -33,8 +33,7 @@ export default function Leistungen() {
         {data.allContentfulLeistungenpost.edges.map(({ node }, i) => {
           return (
             <div
-              className="p-4 mb-8 rounded-lg bg-sky-200
-             shadow-lg"
+              className="p-4 mb-8 rounded-md bg-gradient-to-tr from-green-100 to-green-200 shadow-lg"
               key={i}
             >
               <h2 className="mb-4">{node.ueberschrift}</h2>
