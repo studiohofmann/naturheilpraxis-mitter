@@ -12,6 +12,8 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-plugin-postcss",
+    "gatsby-transformer-remark",
+
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -28,11 +30,12 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: "gatsby-plugin-react-svg",
       options: {
-        google: {
-          families: ["PT Serif"],
+        rule: {
+          include: /assets/,
         },
       },
     },

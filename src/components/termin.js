@@ -12,22 +12,45 @@ export default function Termin() {
         button {
           button
         }
+        button1
+        button2
+        button3
       }
     }
   `);
 
   return (
-    <div className="px-4 bg-green-200 pt-20  pb-20 ">
-      <h1 className="mb-8">{data.contentfulTermin.ueberschrift}</h1>
-      <div className="bg-gradient-to-tr from-amber-50 to-amber-100 p-4 shadow-lg rounded-md">
-        <p className="">{data.contentfulTermin.beschreibung.beschreibung}</p>
+    <div className="px-6 bg-zinc-500 h-[50vh] flex items-center">
+      <div>
+        <h1 className="mb-3 tracking-wide text-zinc-300">
+          {data.contentfulTermin.ueberschrift}
+        </h1>
 
-        <button
-          className="w-4/12 h-12 bg-red-200 rounded-full mt-5"
-          type="submit"
-        >
-          {data.contentfulTermin.button.button}
-        </button>
+        <p className="mb-12 text-zinc-300">
+          {data.contentfulTermin.beschreibung.beschreibung}
+        </p>
+        <div className="flex gap-6">
+          <button
+            className="basis-full bg-green-200 text-zinc-500"
+            type="submit"
+          >
+            {data.contentfulTermin.button1}
+          </button>
+
+          <button
+            className="basis-full bg-green-200 text-zinc-500"
+            type="submit"
+          >
+            {data.contentfulTermin.button2}
+          </button>
+
+          <button
+            className="basis-full bg-green-200 text-zinc-500"
+            type="submit"
+          >
+            {data.contentfulTermin.button3}
+          </button>
+        </div>
       </div>
     </div>
   );

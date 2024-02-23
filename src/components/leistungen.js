@@ -1,7 +1,9 @@
 import * as React from "react";
+import { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
 export default function Leistungen() {
+  const [isVisible, setIsVisible] = useState(false);
   const data = useStaticQuery(graphql`
     query LeistungenQuery {
       allContentfulLeistungenpost(sort: { reihenfolge: DESC }) {
@@ -24,20 +26,24 @@ export default function Leistungen() {
   `);
 
   return (
-    <div className="bg-amber-50 py-40 p-5">
-      <h1 className="mb-4">{data.contentfulLeistungen.ueberschrift}</h1>
-      <p className="mb-20">
+    <div className="bg-zinc-300 py-36 p-6">
+      <h1 className="mb-3">{data.contentfulLeistungen.ueberschrift}</h1>
+      <p className="mb-12">
         {data.contentfulLeistungen.beschreibung.beschreibung}
       </p>
-      <div>
+      <div className="flex flex-col gap-6">
         {data.allContentfulLeistungenpost.edges.map(({ node }, i) => {
           return (
-            <div
-              className="p-4 mb-8 rounded-md bg-gradient-to-tr from-green-100 to-green-200 shadow-lg"
-              key={i}
-            >
+            <div key={i}>
               <h2 className="mb-4">{node.ueberschrift}</h2>
-              <p className="text-justify">{node.text.text}</p>
+              <button onClick={() => setIsVisible(!isVisible)}>
+                {isVisible ? "Hide content" : "Show content"}
+              </button>{" "}
+              {isVisible && (
+                <div>
+                  <p className="text-justify">{node.text.text}</p>
+                </div>
+              )}
             </div>
           );
         })}

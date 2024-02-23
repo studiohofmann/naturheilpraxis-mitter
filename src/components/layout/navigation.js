@@ -1,36 +1,51 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { useStaticQuery, graphql } from "gatsby";
-import { GatsbyImage } from "gatsby-plugin-image";
+import Logo from "../../assets/logo.svg";
+import { useState } from "react";
+import { IoClose } from "react-icons/io5";
+import { IoMenu } from "react-icons/io5";
 
 export default function Menue() {
-  const data = useStaticQuery(graphql`
-    query NavigationQuery {
-      contentfulAsset(filename: { eq: "logo.png" }) {
-        gatsbyImageData(quality: 100, placeholder: BLURRED)
-        title
-      }
-    }
-  `);
+  const [show, setShow] = useState(true);
 
   return (
-    <div className="px-4 pt-4 flex justify-between absolute z-10 w-full">
-      <Link to="/" activeClassName="">
-        <GatsbyImage
-          className="w-24"
-          image={data.contentfulAsset.gatsbyImageData}
-          alt={data.contentfulAsset.title}
-        />
+    <div className="absolute px-6 pt-6 z-10 w-full flex justify-between mp-3">
+      <Link
+        to="/"
+        className="mr-6 bg-zinc-500 hover:bg-green-400 duration-500 h-23 p-3"
+      >
+        <Logo class="fill-white h-full" />
+      </Link>
+      <div>
+        <button
+          className="relative float-right z-10"
+          onClick={() => setShow(!show)}
+        >
+          {show ? <IoMenu /> : <IoClose />}
+        </button>
+        <div>
+          <Box status={show} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Box(props) {
+  return (
+    <div
+      style={{ visibility: props.status ? "hidden" : "visible" }}
+      className="absolute flex flex-wrap flex-row-reverse gap-3 h-fit right-6 left-1/3"
+    >
+      <Link className="mr-[4.25rem]" to="/blog">
+        Blog
       </Link>
 
-      <button
-        className="bg-slate-400 h-10 px-8 rounded-md shadow-lg"
-        type="submit"
-      >
-        <Link className="" to="/schwerpunkte">
-          Menü
-        </Link>
-      </button>
+      <Link to="/schwerpunkte">Schwerpunkte</Link>
+
+      <Link to="/kontakt">Kontakt</Link>
+
+      <Link to="/uebermich">Über mich</Link>
     </div>
   );
 }

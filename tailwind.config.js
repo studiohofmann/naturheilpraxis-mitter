@@ -5,14 +5,13 @@ module.exports = {
     `./src/components/**/*.{js,jsx,ts,tsx}`,
   ],
   theme: {
-    fontFamily: {
-      sans: ["Rubik", "sans-serif"],
-      body: ["Rubik", "sans-serif"],
-    },
-
     extend: {
+      fontFamily: {
+        roboto: ["'Space Grotesks', sans-serif"],
+        rethink: ["'Rethink Sans', sans-serif"],
+      },
       height: {
-        144: "36rem",
+        23: "5.75rem",
       },
     },
 

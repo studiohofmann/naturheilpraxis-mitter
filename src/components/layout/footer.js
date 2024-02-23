@@ -1,19 +1,17 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
 
 export default function Footer() {
   const data = useStaticQuery(graphql`
     query FooterQuery {
-      contentfulAdresse {
-        name
+      contentfulImpressum {
         adresse {
-          adresse
+          raw
         }
-      }
-      contentfulFooter {
         copyright {
-          copyright
+          raw
         }
       }
     }
@@ -22,14 +20,13 @@ export default function Footer() {
   const today = new Date();
 
   return (
-    <div className="bg-gradient-to-bl from-slate-300 to-slate-400 pt-20 pb-4">
-      <div className="flex">
-        <div className="shadow-lg rounded-md bg-stone-200 w-1/2 p-4 ml-4 mr-2">
-          <h2>{data.contentfulAdresse.name}</h2>
-          <p>{data.contentfulAdresse.adresse.adresse}</p>
+    <div className="bg-slate-300 pt-20 pb-4">
+      <div className="flex gap-6 mx-6 mb-6">
+        <div className="shadow-lg rounded-md bg-stone-200 w-1/2 p-6">
+          <p>{renderRichText(data.contentfulImpressum.adresse)}</p>
         </div>
 
-        <div className="flex flex-wrap flex-row-reverse bg-stone-200 w-1/2 p-4 ml-2 mr-4 gap-4 shadow-lg rounded-md">
+        <div className="flex flex-wrap flex-row-reverse bg-stone-200 w-1/2 p-6  gap-4 shadow-lg rounded-md">
           <button className="bg-slate-400 rounded-full py-2 px-4" type="submit">
             <Link className="rounded-full" to="/schwerpunkte">
               Schwerpunkte
@@ -59,12 +56,11 @@ export default function Footer() {
           </button>
         </div>
       </div>
-      <div className="bg-stone-200 mx-4 mt-4 p-4 shadow-lg rounded-md">
-        <p className="">
-          {today.getFullYear()}
-          {data.contentfulFooter.copyright.copyright}
-        </p>
-      </div>
+
+      <p className="mx-6 text-center">
+        {today.getFullYear()} © Naturheilpraxis Mitter
+        {renderRichText(data.contentfulImpressum.copyright)}
+      </p>
     </div>
   );
 }
