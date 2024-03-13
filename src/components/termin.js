@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import { Link } from "gatsby";
 
 export default function Termin() {
   const data = useStaticQuery(graphql`
@@ -20,37 +21,27 @@ export default function Termin() {
   `);
 
   return (
-    <div className="px-6 bg-zinc-500 h-[50vh] flex items-center">
-      <div>
-        <h1 className="mb-3 tracking-wide text-zinc-300">
+    <div className="bg-gray-100">
+      <div className="px-5 py-32">
+        <h1 className="pb-5 underline underline-offset-8  w-2/3">
           {data.contentfulTermin.ueberschrift}
         </h1>
-
-        <p className="mb-12 text-zinc-300">
+        <p className="pb-10  w-2/3">
           {data.contentfulTermin.beschreibung.beschreibung}
         </p>
-        <div className="flex gap-6">
-          <button
-            className="basis-full bg-green-200 text-zinc-500"
-            type="submit"
-          >
-            {data.contentfulTermin.button1}
-          </button>
 
-          <button
-            className="basis-full bg-green-200 text-zinc-500"
-            type="submit"
-          >
-            {data.contentfulTermin.button2}
-          </button>
-
-          <button
-            className="basis-full bg-green-200 text-zinc-500"
-            type="submit"
-          >
-            {data.contentfulTermin.button3}
-          </button>
+        <div className="flex flex-col w-2/3 float-right">
+          <Link to="/schwerpunkte" className="bg-green-300 mb-2">
+            <h1>Anruf</h1>
+          </Link>
+          <Link to="/schwerpunkte" className="bg-green-300 mb-2">
+            <h1>Email</h1>
+          </Link>
+          <Link to="/schwerpunkte" className="bg-green-300">
+            <h1>Whatsapp</h1>
+          </Link>
         </div>
+        <p class="clear-right"></p>
       </div>
     </div>
   );

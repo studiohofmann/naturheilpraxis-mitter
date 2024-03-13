@@ -26,7 +26,7 @@ export default function Startbild() {
       />
 
       <div className="absolute left-0 right-0 px-6">
-        <h1 className="text-6xl text-zinc-500">
+        <h1 className="text-gray-100 text-7xl">
           {data.contentfulStartbild.text.text}
         </h1>
       </div>

@@ -1,51 +1,31 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import Logo from "../../assets/logo.svg";
-import { useState } from "react";
-import { IoClose } from "react-icons/io5";
-import { IoMenu } from "react-icons/io5";
 
 export default function Menue() {
-  const [show, setShow] = useState(true);
-
   return (
-    <div className="absolute px-6 pt-6 z-10 w-full flex justify-between mp-3">
-      <Link
-        to="/"
-        className="mr-6 bg-zinc-500 hover:bg-green-400 duration-500 h-23 p-3"
-      >
-        <Logo class="fill-white h-full" />
+    <div className="flex">
+      <Link to="/" className="bg-green-300 grow">
+        <h1 className="p-5 text-white">
+          Praxis
+          <br />
+          Mitter
+        </h1>
       </Link>
-      <div>
-        <button
-          className="relative float-right z-10"
-          onClick={() => setShow(!show)}
-        >
-          {show ? <IoMenu /> : <IoClose />}
-        </button>
-        <div>
-          <Box status={show} />
-        </div>
+
+      <div className="flex flex-col bg-gray-400 px-5 pt-5 pb-5 w-2/3">
+        <Link to="/schwerpunkte" className="bg-green-300 mb-2">
+          <h1>Schwerpunkte</h1>
+        </Link>
+        <Link to="/uebermich" className="bg-green-300 mb-2">
+          <h1>Über mich</h1>
+        </Link>
+        <Link to="/blog" className="bg-green-300 mb-2">
+          <h1>Blog</h1>
+        </Link>
+        <Link to="/kontakt" className="bg-green-300">
+          <h1>Kontakt</h1>
+        </Link>
       </div>
-    </div>
-  );
-}
-
-function Box(props) {
-  return (
-    <div
-      style={{ visibility: props.status ? "hidden" : "visible" }}
-      className="absolute flex flex-wrap flex-row-reverse gap-3 h-fit right-6 left-1/3"
-    >
-      <Link className="mr-[4.25rem]" to="/blog">
-        Blog
-      </Link>
-
-      <Link to="/schwerpunkte">Schwerpunkte</Link>
-
-      <Link to="/kontakt">Kontakt</Link>
-
-      <Link to="/uebermich">Über mich</Link>
     </div>
   );
 }

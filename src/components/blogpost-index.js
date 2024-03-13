@@ -30,10 +30,12 @@ export default function BlogpostIndex() {
   `);
 
   return (
-    <div className="bg-green-200 py-36 p-6">
+    <div className="bg-green-300 px-5 py-20">
       <div className="">
-        <h1 className="mb-3">{data.contentfulAktuelles.ueberschrift}</h1>
-        <p className="mb-12">
+        <h1 className="mb-5 underline underline-offset-8">
+          {data.contentfulAktuelles.ueberschrift}
+        </h1>
+        <p className="mb-5">
           {data.contentfulAktuelles.beschreibung.beschreibung}
         </p>
       </div>
@@ -42,8 +44,8 @@ export default function BlogpostIndex() {
         const singleImage = getImage(node.bild);
         return (
           <div>
-            <div key={i}>
-              <h2 className="mb-3">{node.ueberschrift}</h2>
+            <div key={i} className="p-5 bg-gray-100">
+              <h1 className="mb-3">{node.ueberschrift}</h1>
               <p className="mb-6">{node.datum}</p>
 
               <GatsbyImage

@@ -6,11 +6,10 @@ import { GatsbyImage } from "gatsby-plugin-image";
 const Uebermich = ({ data }) => {
   return (
     <Layout>
-      <div className="bg-teal-200 pt-80 pb-40">
-        <div className="px-5">
-          <h1 className="mb-4">{data.contentfulUebermich.ueberschrift}</h1>
+      <div className="bg-neutral-100 mb-20">
+        <div className="px-5 pt-20">
           <GatsbyImage
-            className="mb-4"
+            className="mb-10"
             image={data.contentfulUebermich.bild.gatsbyImageData}
             alt={data.contentfulUebermich.bild.title}
           />

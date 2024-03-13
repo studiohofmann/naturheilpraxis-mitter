@@ -2,6 +2,7 @@ import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
+import Newsletter from "./newsletter";
 
 export default function Footer() {
   const data = useStaticQuery(graphql`
@@ -20,46 +21,55 @@ export default function Footer() {
   const today = new Date();
 
   return (
-    <div className="bg-slate-300 pt-20 pb-4">
-      <div className="flex gap-6 mx-6 mb-6">
-        <div className="shadow-lg rounded-md bg-stone-200 w-1/2 p-6">
-          <p>{renderRichText(data.contentfulImpressum.adresse)}</p>
+    <div className="bg-gray-100 px-5">
+      <Newsletter />
+      <div className="flex gap-5">
+        <div className="flex flex-col w-2/3">
+          <Link to="/schwerpunkte" className="bg-green-300 mb-2">
+            <h1>Schwerpunkte</h1>
+          </Link>
+          <Link to="/uebermich" className="bg-green-300 mb-2">
+            <h1>Über mich</h1>
+          </Link>
+          <Link to="/blog" className="bg-green-300 mb-2">
+            <h1>Blog</h1>
+          </Link>
+          <Link to="/kontakt" className="bg-green-300">
+            <h1>Kontakt</h1>
+          </Link>
         </div>
-
-        <div className="flex flex-wrap flex-row-reverse bg-stone-200 w-1/2 p-6  gap-4 shadow-lg rounded-md">
-          <button className="bg-slate-400 rounded-full py-2 px-4" type="submit">
-            <Link className="rounded-full" to="/schwerpunkte">
-              Schwerpunkte
-            </Link>
-          </button>
-          <button className="bg-slate-400 rounded-full py-2 px-4" type="submit">
-            <Link className="rounded-full" to="/kontakt">
-              Über mich
-            </Link>
-          </button>
-          <button className="bg-slate-400 rounded-full py-2 px-4" type="submit">
-            <Link className="rounded-full" to="/kontakt">
-              Kontakt
-            </Link>
-          </button>
-
-          <button className="bg-slate-400 rounded-full py-2 px-4" type="submit">
-            <Link className="rounded-full" to="/blog">
-              Blog
-            </Link>
-          </button>
-
-          <button className="bg-slate-400 rounded-full py-2 px-4" type="submit">
-            <Link className="rounded-full" to="/kontakt">
-              Impressum
-            </Link>
-          </button>
-        </div>
+        <a
+          href="https://maps.app.goo.gl/kcJtWPnBZ2NwwEhY8"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-300 grow"
+        >
+          <h1 className="">
+            Praxis Mitter
+            <br />
+            Hofwiesen
+            <br />
+            strasse 114
+            <br />
+            8057 Zürich
+            <br />
+          </h1>
+        </a>
       </div>
 
-      <p className="mx-6 text-center">
+      <p className="pt-10 pb-2 text-gray-400">
         {today.getFullYear()} © Naturheilpraxis Mitter
-        {renderRichText(data.contentfulImpressum.copyright)}
+        <div className="flex">
+          {renderRichText(data.contentfulImpressum.copyright)}&nbsp;
+          <a
+            href="https://www.instagram.com/superstudiohofmann"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-300 text-blue-500 inline"
+          >
+            Studio Hofmann
+          </a>
+        </div>
       </p>
     </div>
   );

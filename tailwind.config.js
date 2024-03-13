@@ -7,11 +7,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        roboto: ["'Space Grotesks', sans-serif"],
-        rethink: ["'Rethink Sans', sans-serif"],
+        paragraph: ["'Barlow Condensed', sans-serif"],
+        heading: ["'Barlow Condensed', sans-serif"],
       },
-      height: {
-        23: "5.75rem",
+      fontWeight: {
+        bold: "700",
       },
     },
 
