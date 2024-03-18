@@ -27,7 +27,7 @@ export default function Blogpost() {
       {data.allContentfulBlogpost.edges.map(({ node }, i) => {
         const singleImage = getImage(node.bild);
         return (
-          <div className="mx-6 mt-12 p-6 rounded-md bg-gray-100 shadow-lg">
+          <div className="mx-6 mt-12 p-6 bg-gray-100">
             <div key={i}>
               <h2 className="2">{node.ueberschrift}</h2>
               <p className="mb-6">{node.datum}</p>

@@ -7,14 +7,17 @@ import Anfahrt from "../components/anfahrt";
 const Kontakt = ({ data }) => {
   return (
     <Layout>
-      <div className="bg-stone-300">
-        <div className="px-5 pt-80 pb-40">
-          <h1 className="mb-5">{data.contentfulKontakt.ueberschrift}</h1>
-          <p className="mb-10 text-justify">
-            {data.contentfulKontakt.beschreibung.beschreibung}
-          </p>
+      <div className="bg-lightgray pt-[224px]">
+        <h1 className="px-3 pt-32 pb-16">
+          {data.contentfulKontakt.ueberschrift}
+        </h1>
+        <p className="px-3 pb-16">
+          {data.contentfulKontakt.beschreibung.beschreibung}
+        </p>
+        <div className="px-3 pb-32">
           <Formular />
         </div>
+
         <Anfahrt />
       </div>
     </Layout>

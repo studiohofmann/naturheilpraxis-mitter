@@ -18,15 +18,15 @@ export default function Startbild() {
   `);
 
   return (
-    <div className="flex justify-center items-center h-[50vh]">
+    <div className="flex h-[66vh] text-center">
       <GatsbyImage
         className="h-full"
         image={data.contentfulStartbild.bild.gatsbyImageData}
         alt={data.contentfulStartbild.bild.title}
       />
 
-      <div className="absolute left-0 right-0 px-6">
-        <h1 className="text-gray-100 text-7xl">
+      <div className="absolute mt-[224px] pt-32">
+        <h1 className="text-yellow text-7xl">
           {data.contentfulStartbild.text.text}
         </h1>
       </div>

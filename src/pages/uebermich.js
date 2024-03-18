@@ -6,15 +6,13 @@ import { GatsbyImage } from "gatsby-plugin-image";
 const Uebermich = ({ data }) => {
   return (
     <Layout>
-      <div className="bg-neutral-100 mb-20">
-        <div className="px-5 pt-20">
-          <GatsbyImage
-            className="mb-10"
-            image={data.contentfulUebermich.bild.gatsbyImageData}
-            alt={data.contentfulUebermich.bild.title}
-          />
-          <p>{data.contentfulUebermich.text.text}</p>
-        </div>
+      <div className="px-3 pt-[224px] pb-64 bg-lightgray">
+        <GatsbyImage
+          className="mt-32 mb-16"
+          image={data.contentfulUebermich.bild.gatsbyImageData}
+          alt={data.contentfulUebermich.bild.title}
+        />
+        <p>{data.contentfulUebermich.text.text}</p>
       </div>
     </Layout>
   );
@@ -37,4 +35,4 @@ export const query = graphql`
 
 export default Uebermich;
 
-export const Head = () => <title>Uebermich</title>;
+export const Head = () => <title>Praxis Mitter - Über mich</title>;

@@ -1,6 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import { IoIosAdd } from "react-icons/io";
+import { IoIosClose } from "react-icons/io";
 
 export default function Leistungen() {
   const data = useStaticQuery(graphql`
@@ -33,37 +35,36 @@ export default function Leistungen() {
   };
 
   return (
-    <div className="bg-gray-400 py-32">
-      <h1 className="text-gray-100 px-5 pb-5 underline underline-offset-8">
+    <div className="bg-green px-2 py-20 -mb-2">
+      <h1 className="text-darkgreen pb-10 underline underline-offset-8 w-2/3 float-right">
         {data.contentfulLeistungen.ueberschrift}
       </h1>
-      <p className="px-5 pb-10 text-gray-100">
+      <p className="pb-10 text-darkgreen w-2/3 float-right">
         {data.contentfulLeistungen.beschreibung.beschreibung}
       </p>
-      <div className="px-5">
-        {data.allContentfulLeistungenpost.edges.map(({ node }, i) => {
-          return (
-            <div key={i}>
-              <h1
-                onClick={() => {
-                  toggleOpen(node.ueberschrift);
-                }}
-              >
-                <div className="flex">
-                  <div className="text-blue-500 bg-green-300 hover:bg-blue-700 hover:text-gray-100 duration-500 w-full mb-3">
-                    {node.ueberschrift}
-                  </div>
-                  <div>{isOpen[node.ueberschrift] ? "" : ""}</div>
-                </div>
-              </h1>
+      <div className="clear-both"></div>
 
-              {isOpen[node.ueberschrift] && (
-                <p className="text-gray-100 pb-5">{node.text.text}</p>
-              )}
-            </div>
-          );
-        })}
-      </div>
+      {data.allContentfulLeistungenpost.edges.map(({ node }, i) => {
+        return (
+          <div key={i}>
+            <h1
+              onClick={() => {
+                toggleOpen(node.ueberschrift);
+              }}
+            >
+              <div className="flex gap-2">
+                <a className="w-full p-1 mb-2">{node.ueberschrift}</a>
+              </div>
+            </h1>
+
+            {isOpen[node.ueberschrift] && (
+              <p className="text-green mb-10 bg-lightgreen p-2">
+                {node.text.text}
+              </p>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }

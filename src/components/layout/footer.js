@@ -21,20 +21,22 @@ export default function Footer() {
   const today = new Date();
 
   return (
-    <div className="bg-gray-100 px-5">
-      <Newsletter />
-      <div className="flex gap-5">
-        <div className="flex flex-col w-2/3">
-          <Link to="/schwerpunkte" className="bg-green-300 mb-2">
+    <div className="bg-text px-3">
+      <div className="py-16">
+        <Newsletter />
+      </div>
+      <div className="flex gap-3 pb-32">
+        <div className="flex flex-col gap-3 w-2/3">
+          <Link to="/schwerpunkte" className="p-1">
             <h1>Schwerpunkte</h1>
           </Link>
-          <Link to="/uebermich" className="bg-green-300 mb-2">
+          <Link to="/uebermich" className="p-1">
             <h1>Über mich</h1>
           </Link>
-          <Link to="/blog" className="bg-green-300 mb-2">
+          <Link to="/blog" className="p-1">
             <h1>Blog</h1>
           </Link>
-          <Link to="/kontakt" className="bg-green-300">
+          <Link to="/kontakt" className="p-1">
             <h1>Kontakt</h1>
           </Link>
         </div>
@@ -42,7 +44,7 @@ export default function Footer() {
           href="https://maps.app.goo.gl/kcJtWPnBZ2NwwEhY8"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-green-300 grow"
+          className="p-1 grow"
         >
           <h1 className="">
             Praxis Mitter
@@ -56,8 +58,7 @@ export default function Footer() {
           </h1>
         </a>
       </div>
-
-      <p className="pt-10 pb-2 text-gray-400">
+      <p className="pb text-green">
         {today.getFullYear()} © Naturheilpraxis Mitter
         <div className="flex">
           {renderRichText(data.contentfulImpressum.copyright)}&nbsp;
@@ -65,7 +66,7 @@ export default function Footer() {
             href="https://www.instagram.com/superstudiohofmann"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-green-300 text-blue-500 inline"
+            className="inline text-amber-300 bg-stone-400"
           >
             Studio Hofmann
           </a>

@@ -4,6 +4,7 @@ module.exports = {
     `./src/pages/**/*.{js,jsx,ts,tsx}`,
     `./src/components/**/*.{js,jsx,ts,tsx}`,
   ],
+
   theme: {
     extend: {
       fontFamily: {
@@ -13,24 +14,23 @@ module.exports = {
       fontWeight: {
         bold: "700",
       },
+      colors: {
+        text: "#586f6b",
+        linkbackground: "#D8EAF2",
+        linktext: "#9BBCC9",
+        gray: "edede9",
+        yellow: "#FAF2C6",
+        green: "#DAFCC7",
+        lightgray: "#FAF0E6",
+      },
     },
 
     screens: {
       tablet: "640px",
-      // => @media (min-width: 640px) { ... }
-
       md: "768px",
-      // => @media (min-width: 768px) { ... }
-
       laptop: "1024px",
-      // => @media (min-width: 1024px) { ... }
-
       desktop: "1280px",
-      // => @media (min-width: 1280px) { ... }
-
       "2xl": "1536px",
-      // => @media (min-width: 1536px) { ... }
     },
   },
-  plugins: [],
 };

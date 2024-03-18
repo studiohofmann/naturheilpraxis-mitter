@@ -15,12 +15,12 @@ export default function Anfahrt() {
   `);
 
   return (
-    <div className="bg-amber-50 pt-20  pb-20 ">
-      <div className="mx-4 mb-10">
-        <h1 className="mb-4">{data.contentfulAnfahrt.ueberschrift}</h1>
+    <div className="bg-yellow">
+      <div className="px-3 pt-32 pb-64">
+        <h1 className="">{data.contentfulAnfahrt.ueberschrift}</h1>
         <p>{data.contentfulAnfahrt.beschreibung.beschreibung}</p>
       </div>
-      <Map />
+      <Map className="px-3" />
     </div>
   );
 }

@@ -6,7 +6,7 @@
 
 html {
   @apply h-full;
-  @apply text-blue-500;
+  @apply text-text;
 }
 body {
   @apply h-full;
@@ -18,7 +18,7 @@ main {
 @layer base {
 p {
   @apply font-paragraph;
-  @apply text-xl; 
+  @apply text-2xl; 
 }
 
 h1 {
@@ -39,12 +39,22 @@ h2 {
   }
 
   a {
-    
+    @apply bg-linkbackground;
+    @apply text-linktext;
+    @apply py-1;
+    @apply px-3;
   }
 
   a:hover {
-    @apply text-gray-100;
-    @apply bg-blue-500;
+    
+    @apply bg-linktext;
+    @apply text-linkbackground;
     @apply duration-500;
+  }
+
+ .active {
+    
+  @apply bg-linktext;
+  @apply text-linkbackground;
   }
 }
