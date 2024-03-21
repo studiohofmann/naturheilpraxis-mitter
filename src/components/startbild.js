@@ -25,8 +25,8 @@ export default function Startbild() {
         alt={data.contentfulStartbild.bild.title}
       />
 
-      <div className="absolute mt-[224px] pt-32">
-        <h1 className="text-yellow text-7xl">
+      <div className="absolute mt-[256px] pt-32">
+        <h1 className="text-creme text-5xl px-8">
           {data.contentfulStartbild.text.text}
         </h1>
       </div>

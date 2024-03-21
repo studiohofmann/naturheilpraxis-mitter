@@ -8,20 +8,21 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        paragraph: ["'Barlow Condensed', sans-serif"],
-        heading: ["'Barlow Condensed', sans-serif"],
+        paragraph: ["'Outfit', sans-serif"],
+        heading: ["'Outfit', sans-serif"],
       },
       fontWeight: {
         bold: "700",
+        paragraph: "300",
       },
+
       colors: {
-        text: "#586f6b",
-        linkbackground: "#D8EAF2",
-        linktext: "#9BBCC9",
-        gray: "edede9",
-        yellow: "#FAF2C6",
-        green: "#DAFCC7",
-        lightgray: "#FAF0E6",
+        textcolor: "#6A8D9C",
+        linkbackgroundcolor: "#CBDDE3",
+        gray: "#E3E3D8",
+        yellow: "#E8DBAE",
+        green: "#E1F0DC",
+        creme: "#EDEDE4",
       },
     },
 

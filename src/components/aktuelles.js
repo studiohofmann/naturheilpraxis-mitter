@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import ReadMoreReact from "read-more-react";
 
-export default function BlogpostIndex() {
+export default function Aktuelles() {
   const data = useStaticQuery(graphql`
     query BlogpostIndexQuery {
       contentfulAktuelles {
@@ -31,11 +31,9 @@ export default function BlogpostIndex() {
   `);
 
   return (
-    <div className="bg-gray px-3 pt-32 pb-64">
+    <div className="bg-creme px-8 pt-16 pb-64">
       <div className="">
-        <h1 className="mb-16 underline underline-offset-8">
-          {data.contentfulAktuelles.ueberschrift}
-        </h1>
+        <h1 className="mb-8">{data.contentfulAktuelles.ueberschrift}</h1>
         <p className="mb-16">
           {data.contentfulAktuelles.beschreibung.beschreibung}
         </p>
@@ -45,12 +43,12 @@ export default function BlogpostIndex() {
         const singleImage = getImage(node.bild);
         return (
           <div>
-            <div key={i} className="bg-yellow p-6">
-              <h1 className="mb-6">{node.ueberschrift}</h1>
-              <p className="mb-6">{node.datum}</p>
+            <div key={i} className="bg-gray px-4 pt-4 pb-8">
+              <h2 className="pb-4">{node.ueberschrift}</h2>
+              <p className="pb-8">{node.datum}</p>
 
               <GatsbyImage
-                className="mb-6"
+                className="mb-4"
                 image={singleImage}
                 alt={node.title}
               />

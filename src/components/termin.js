@@ -24,35 +24,37 @@ export default function Termin() {
   `);
 
   return (
-    <div className="bg-yellow px-3 py-32">
-      <h1 className="pb-10 w-2/3 underline underline-offset-8">
-        {data.contentfulTermin.ueberschrift}
-      </h1>
-      <p className="pb-20">{data.contentfulTermin.beschreibung.beschreibung}</p>
+    <div className="bg-creme px-8 pt-16 pb-32">
+      <h1 className="pb-16 w-2/3">{data.contentfulTermin.ueberschrift}</h1>
+      <p className="pb-16">{data.contentfulTermin.beschreibung.beschreibung}</p>
 
-      <div className="flex flex-col w-2/3 float-right gap-3">
+      <div className="flex flex-col w-2/3 float-right gap-4">
         <a href="tel:+499123456789">
-          <h1
+          <h2
             className="
           flex"
           >
-            <IoMdCall className="mr-3 pt-2" />
-            Anruf
-          </h1>
+            <IoMdCall className="mr-10  pt-1 text-3xl" />
+
+            <div className="pt-1">Anruf</div>
+          </h2>
         </a>
 
         <Link to="/kontakt">
-          <h1 className="flex">
-            <IoMdMail className="mr-3 pt-2" />
-            Email
-          </h1>
+          <h2 className="flex">
+            <IoMdMail className="mr-10  pt-1 text-3xl" />
+
+            <div className="pt-1">E-Mail</div>
+          </h2>
         </Link>
 
         <a href="https://wa.me/1XXXXXXXXXX" target="_blank">
-          <h1 className="flex">
-            <IoLogoWhatsapp className="mr-3 pt-2" />
-            Whatsapp
-          </h1>
+          <h2 className="flex">
+            <h1>
+              <IoLogoWhatsapp className="mr-10  pt-1 text-3xl" />
+            </h1>
+            <div className="pt-1">WhatsApp</div>
+          </h2>
         </a>
       </div>
       <p class="clear-right"></p>

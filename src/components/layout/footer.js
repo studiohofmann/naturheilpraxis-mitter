@@ -21,32 +21,35 @@ export default function Footer() {
   const today = new Date();
 
   return (
-    <div className="bg-text px-3">
-      <div className="py-16">
+    <div className="bg-textcolor text-creme px-8 pt-16 pb-4">
+      <div className="pb-16">
         <Newsletter />
       </div>
-      <div className="flex gap-3 pb-32">
-        <div className="flex flex-col gap-3 w-2/3">
-          <Link to="/schwerpunkte" className="p-1">
-            <h1>Schwerpunkte</h1>
+      <div className="flex gap-4 pb-16">
+        <div className="flex flex-col gap-4 w-1/2">
+          <Link to="/schwerpunkte" activeClassName="active">
+            <h2>Schwerpunkte</h2>
           </Link>
-          <Link to="/uebermich" className="p-1">
-            <h1>Über mich</h1>
+          <Link to="/uebermich" activeClassName="active">
+            <h2>Über mich</h2>
           </Link>
-          <Link to="/blog" className="p-1">
-            <h1>Blog</h1>
+          <Link to="/blog" activeClassName="active">
+            <h2>Blog</h2>
           </Link>
-          <Link to="/kontakt" className="p-1">
-            <h1>Kontakt</h1>
+          <Link to="/kontakt" activeClassName="active">
+            <h2>Kontakt</h2>
+          </Link>
+          <Link to="/kontakt" activeClassName="active">
+            <h2>Impressum</h2>
           </Link>
         </div>
         <a
           href="https://maps.app.goo.gl/kcJtWPnBZ2NwwEhY8"
           target="_blank"
           rel="noopener noreferrer"
-          className="p-1 grow"
+          className=" grow"
         >
-          <h1 className="">
+          <h2 className="">
             Praxis Mitter
             <br />
             Hofwiesen
@@ -55,22 +58,11 @@ export default function Footer() {
             <br />
             8057 Zürich
             <br />
-          </h1>
+          </h2>
         </a>
       </div>
-      <p className="pb text-green">
+      <p className="text-center">
         {today.getFullYear()} © Naturheilpraxis Mitter
-        <div className="flex">
-          {renderRichText(data.contentfulImpressum.copyright)}&nbsp;
-          <a
-            href="https://www.instagram.com/superstudiohofmann"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline text-amber-300 bg-stone-400"
-          >
-            Studio Hofmann
-          </a>
-        </div>
       </p>
     </div>
   );

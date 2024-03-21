@@ -16,11 +16,9 @@ export default function Newsletter() {
 
   return (
     <div className="text-linkbackground">
-      <h1 className="pb-16 underline underline-offset-8">
-        {data.contentfulNewsletter.titel}
-      </h1>
-      <p className="pb-16 w-2/3">{data.contentfulNewsletter.text.text}</p>
-      <div className="flex gap-2">
+      <h2 className="pb-8">{data.contentfulNewsletter.titel}</h2>
+      <p className="pb-8 w-2/3">{data.contentfulNewsletter.text.text}</p>
+      <div className="flex gap-4">
         <div className="w-2/3">
           <input
             type="text"
@@ -31,9 +29,9 @@ export default function Newsletter() {
           />
         </div>
         <div className="grow">
-          <h1 type="submit" className="p-1 bg-linkbackground text-linktext">
+          <h2 type="submit" className="p-1 bg-linkbackground text-linktext">
             abonnieren
-          </h1>
+          </h2>
         </div>
       </div>
     </div>

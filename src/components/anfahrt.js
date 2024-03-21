@@ -15,12 +15,12 @@ export default function Anfahrt() {
   `);
 
   return (
-    <div className="bg-yellow">
-      <div className="px-3 pt-32 pb-64">
-        <h1 className="">{data.contentfulAnfahrt.ueberschrift}</h1>
+    <div className="bg-green pb-32">
+      <div className="px-8">
+        <h1 className="py-16">{data.contentfulAnfahrt.ueberschrift}</h1>
         <p>{data.contentfulAnfahrt.beschreibung.beschreibung}</p>
       </div>
-      <Map className="px-3" />
+      <Map />
     </div>
   );
 }

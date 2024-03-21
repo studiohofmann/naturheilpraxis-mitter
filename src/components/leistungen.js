@@ -35,11 +35,9 @@ export default function Leistungen() {
   };
 
   return (
-    <div className="bg-green px-2 py-20 -mb-2">
-      <h1 className="text-darkgreen pb-10 underline underline-offset-8 w-2/3 float-right">
-        {data.contentfulLeistungen.ueberschrift}
-      </h1>
-      <p className="pb-10 text-darkgreen w-2/3 float-right">
+    <div className="bg-green px-8 pt-16 pb-32 -mb-2">
+      <h1 className="pb-8">{data.contentfulLeistungen.ueberschrift} </h1>
+      <p className="pb-16">
         {data.contentfulLeistungen.beschreibung.beschreibung}
       </p>
       <div className="clear-both"></div>
@@ -47,20 +45,23 @@ export default function Leistungen() {
       {data.allContentfulLeistungenpost.edges.map(({ node }, i) => {
         return (
           <div key={i}>
-            <h1
+            <h2
               onClick={() => {
                 toggleOpen(node.ueberschrift);
               }}
             >
-              <div className="flex gap-2">
-                <a className="w-full p-1 mb-2">{node.ueberschrift}</a>
-              </div>
-            </h1>
+              <a className="flex justify-between mb-4">
+                {node.ueberschrift}
+                {isOpen[node.ueberschrift] ? (
+                  <IoIosClose className="text-3xl shrink-0" />
+                ) : (
+                  <IoIosAdd className="text-3xl shrink-0" />
+                )}
+              </a>
+            </h2>
 
             {isOpen[node.ueberschrift] && (
-              <p className="text-green mb-10 bg-lightgreen p-2">
-                {node.text.text}
-              </p>
+              <p className="mb-8 px-4">{node.text.text}</p>
             )}
           </div>
         );

@@ -27,19 +27,17 @@ export default function Blogpost() {
       {data.allContentfulBlogpost.edges.map(({ node }, i) => {
         const singleImage = getImage(node.bild);
         return (
-          <div className="mx-6 mt-12 p-6 bg-gray-100">
-            <div key={i}>
-              <h2 className="2">{node.ueberschrift}</h2>
-              <p className="mb-6">{node.datum}</p>
+          <div key={i} className="bg-gray px-4 pt-4 pb-8 mb-8">
+            <h2 className="pb-4">{node.ueberschrift}</h2>
+            <p className="pb-8">{node.datum}</p>
 
-              <GatsbyImage
-                className="mb-6"
-                image={singleImage}
-                alt={node.title}
-              />
+            <GatsbyImage
+              className="mb-4"
+              image={singleImage}
+              alt={node.title}
+            />
 
-              <p className="">{node.text.text}</p>
-            </div>
+            <p className="">{node.text.text}</p>
           </div>
         );
       })}

@@ -3,6 +3,8 @@ import { useState } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout/layout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { IoIosAdd } from "react-icons/io";
+import { IoIosClose } from "react-icons/io";
 
 const Schwerpunkte = ({ data }) => {
   const [isOpen, setIsOpen] = useState({});
@@ -15,44 +17,46 @@ const Schwerpunkte = ({ data }) => {
 
   return (
     <Layout>
-      <div className="bg-gray-400 py-32">
-        <h1 className="mb-4">{data.contentfulSchwerpunkte.ueberschrift}</h1>
-        <p className="mb-40 text-justify ">
+      <div className="bg-green px-8 pt-[256px] pb-64">
+        <h1 className="py-16">{data.contentfulSchwerpunkte.ueberschrift}</h1>
+        <p className="pb-16">
           {data.contentfulSchwerpunkte.beschreibung.beschreibung}
         </p>
-        <div className="px-5">
-          {data.allContentfulSchwerpunktepost.edges.map(({ node }, i) => {
-            const singleImage = getImage(node.bild);
-            return (
-              <div key={i}>
-                <h1
-                  onClick={() => {
-                    toggleOpen(node.ueberschrift);
-                  }}
-                >
-                  <div className="flex">
-                    <div className="text-blue-500 bg-green-300 hover:bg-blue-700 hover:text-gray-100 duration-500 w-full mb-3">
-                      {node.ueberschrift}
-                    </div>
-                    <div>{isOpen[node.ueberschrift] ? "" : ""}</div>
-                  </div>
-                </h1>
 
-                {isOpen[node.ueberschrift] && (
-                  <div>
-                    <GatsbyImage
-                      className="mb-6"
-                      image={singleImage}
-                      alt={node.title}
-                    />
+        {data.allContentfulSchwerpunktepost.edges.map(({ node }, i) => {
+          const singleImage = getImage(node.bild);
+          return (
+            <div key={i}>
+              <h2
+                onClick={() => {
+                  toggleOpen(node.ueberschrift);
+                }}
+              >
+                <a className="flex justify-between mb-4">
+                  {node.ueberschrift}
 
-                    <p className="text-gray-100 pb-5">{node.text.text}</p>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+                  {isOpen[node.ueberschrift] ? (
+                    <IoIosClose className="text-3xl shrink-0" />
+                  ) : (
+                    <IoIosAdd className="text-3xl shrink-0" />
+                  )}
+                </a>
+              </h2>
+
+              {isOpen[node.ueberschrift] && (
+                <div>
+                  <GatsbyImage
+                    className="mb-4 mx-4"
+                    image={singleImage}
+                    alt={node.title}
+                  />
+
+                  <p className="mb-8 px-4">{node.text.text}</p>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </Layout>
   );

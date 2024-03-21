@@ -3,7 +3,7 @@ import Layout from "../components/layout/layout";
 import Startbild from "../components/startbild";
 import Termin from "../components/termin";
 import Leistungen from "../components/leistungen";
-import BlogpostIndex from "../components/blogpost-index";
+import Aktuelles from "../components/aktuelles";
 
 const Index = () => {
   return (
@@ -11,7 +11,7 @@ const Index = () => {
       <Startbild />
       <Termin />
       <Leistungen />
-      <BlogpostIndex />
+      <Aktuelles />
     </Layout>
   );
 };

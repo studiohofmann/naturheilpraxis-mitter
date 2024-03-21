@@ -1,28 +1,7 @@
-import React from "react";
-import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
-import { useMemo } from "react";
+import * as React from "react";
 
 const Map = () => {
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
-  });
-  const center = useMemo(() => ({ lat: 47.3987, lng: 8.5335 }), []);
-
-  return (
-    <div className="h-144 left-0 right-0  mx-4 mb-20">
-      {!isLoaded ? (
-        <p>Loading...</p>
-      ) : (
-        <GoogleMap
-          mapContainerClassName="h-full  rounded-md shadow-lg "
-          center={center}
-          zoom={14}
-        >
-          <Marker position={{ lat: 47.3987, lng: 8.5335 }} />
-        </GoogleMap>
-      )}
-    </div>
-  );
+  return <div className="h-144 left-0 right-0  mx-4 mb-20">hello</div>;
 };
 
 export default Map;
