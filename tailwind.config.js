@@ -23,6 +23,7 @@ module.exports = {
         yellow: "#E8DBAE",
         green: "#E1F0DC",
         creme: "#EDEDE4",
+        footer: "#97A4A8",
       },
     },
 

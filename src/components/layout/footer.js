@@ -21,7 +21,7 @@ export default function Footer() {
   const today = new Date();
 
   return (
-    <div className="bg-textcolor text-creme px-8 pt-16 pb-4">
+    <div className="bg-footer text-creme px-8 pt-16 pb-4">
       <div className="pb-16">
         <Newsletter />
       </div>
@@ -39,7 +39,7 @@ export default function Footer() {
           <Link to="/kontakt" activeClassName="active">
             <h2>Kontakt</h2>
           </Link>
-          <Link to="/kontakt" activeClassName="active">
+          <Link to="/impressum" activeClassName="active">
             <h2>Impressum</h2>
           </Link>
         </div>

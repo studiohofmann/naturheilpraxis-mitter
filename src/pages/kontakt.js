@@ -13,7 +13,7 @@ const Kontakt = ({ data }) => {
           <p className="pb-16">
             {data.contentfulKontakt.beschreibung.beschreibung}
           </p>
-          <div className=" pb-32">
+          <div className="pb-32">
             <Formular />
           </div>
         </div>

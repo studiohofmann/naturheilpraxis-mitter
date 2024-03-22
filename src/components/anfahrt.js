@@ -18,7 +18,10 @@ export default function Anfahrt() {
     <div className="bg-green pb-32">
       <div className="px-8">
         <h1 className="py-16">{data.contentfulAnfahrt.ueberschrift}</h1>
-        <p>{data.contentfulAnfahrt.beschreibung.beschreibung}</p>
+        <p className="pb-16">
+          {" "}
+          {data.contentfulAnfahrt.beschreibung.beschreibung}
+        </p>
       </div>
       <Map />
     </div>
