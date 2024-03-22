@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby";
 import { IoMdCall } from "react-icons/io";
 import { IoMdMail } from "react-icons/io";
