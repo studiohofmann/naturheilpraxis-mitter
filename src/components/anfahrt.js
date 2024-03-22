@@ -19,7 +19,6 @@ export default function Anfahrt() {
       <div className="px-8">
         <h1 className="py-16">{data.contentfulAnfahrt.ueberschrift}</h1>
         <p className="pb-16">
-          {" "}
           {data.contentfulAnfahrt.beschreibung.beschreibung}
         </p>
       </div>
