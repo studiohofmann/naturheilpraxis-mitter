@@ -1,26 +1,43 @@
 import * as React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/layout/layout";
 
-function AboutPage() {
+function Impressum({ data }) {
   return (
-    <div className="about-container">
-      Foto von{" "}
-      <a href="https://unsplash.com/de/@babybluecat?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-        J Lee
-      </a>{" "}
-      auf{" "}
-      <a href="https://unsplash.com/de/fotos/braunes-weizenfeld-tagsuber-OhWlmCiPhP4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-        Unsplash
-      </a>
-      Foto von{" "}
-      <a href="https://unsplash.com/de/@xavier_von_erlach?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-        Xavier von Erlach
-      </a>{" "}
-      auf{" "}
-      <a href="https://unsplash.com/de/fotos/grune-und-graue-berge-unter-weissen-wolken-tagsuber-oi1UfgN52qQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">
-        Unsplash
-      </a>
-    </div>
+    <Layout>
+      <div>
+        <div className="px-8 bg-creme pt-[256px]">
+          <h1 className="py-16">{data.contentfulImpressum.titel}</h1>
+          <p className="w-2/3 pb-16">{data.contentfulImpressum.info.info}</p>
+        </div>
+        <div className="px-8 bg-green">
+          <h1 className="py-16">
+            {data.contentfulImpressum.rechtlichesUeberschrift}
+          </h1>
+          <p className="pb-32">
+            {data.contentfulImpressum.rechtliches.rechtliches}
+          </p>
+        </div>
+      </div>
+    </Layout>
   );
 }
 
-export default AboutPage;
+export const query = graphql`
+  query ImpressumQuery {
+    contentfulImpressum {
+      titel
+      info {
+        info
+      }
+      rechtlichesUeberschrift
+      rechtliches {
+        rechtliches
+      }
+    }
+  }
+`;
+
+export default Impressum;
+
+export const Head = () => <title>Impressum</title>;

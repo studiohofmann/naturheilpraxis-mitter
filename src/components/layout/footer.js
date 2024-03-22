@@ -1,23 +1,10 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { Link } from "gatsby";
-import { renderRichText } from "gatsby-source-contentful/rich-text";
+
 import Newsletter from "./newsletter";
 
 export default function Footer() {
-  const data = useStaticQuery(graphql`
-    query FooterQuery {
-      contentfulImpressum {
-        adresse {
-          raw
-        }
-        copyright {
-          raw
-        }
-      }
-    }
-  `);
-
   const today = new Date();
 
   return (
