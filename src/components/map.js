@@ -1,7 +1,7 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
-const Map = () => {
+export default function Map() {
   return (
     <div className="px-8 pb-32">
       <MapContainer
@@ -22,6 +22,4 @@ const Map = () => {
       </MapContainer>
     </div>
   );
-};
-
-export default Map;
+}
