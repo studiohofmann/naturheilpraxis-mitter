@@ -6,7 +6,7 @@ import Blogpost from "../components/blogpost";
 const Blog = ({ data }) => {
   return (
     <Layout>
-      <div className="px-8 pt-[256px] pb-64 bg-creme">
+      <div className="px-8 pt-[256px] pb-32 bg-gray">
         <h1 className="py-16">{data.contentfulBlog.ueberschrift}</h1>
         <p className="mb-16">{data.contentfulBlog.beschreibung.beschreibung}</p>
         <Blogpost />

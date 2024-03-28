@@ -15,7 +15,7 @@ export default function Anfahrt() {
   `);
 
   return (
-    <div className="bg-green pb-32">
+    <div className="bg-yellow pb-32">
       <div className="px-8">
         <h1 className="py-16">{data.contentfulAnfahrt.ueberschrift}</h1>
         <p className="pb-16">

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import ReadMoreReact from "read-more-react";
+import { Link } from "gatsby";
 
 export default function Aktuelles() {
   const data = useStaticQuery(graphql`
@@ -31,7 +31,7 @@ export default function Aktuelles() {
   `);
 
   return (
-    <div className="bg-creme px-8 pt-16 pb-64">
+    <div className="bg-gray px-8 pt-16 pb-32">
       <div className="">
         <h1 className="mb-8">{data.contentfulAktuelles.ueberschrift}</h1>
         <p className="mb-16">
@@ -43,7 +43,7 @@ export default function Aktuelles() {
         const singleImage = getImage(node.bild);
         return (
           <div>
-            <div key={i} className="bg-gray px-4 pt-4 pb-8">
+            <div key={i} className="bg-yellow shadow-xl px-4 pt-4 pb-8">
               <h2 className="pb-4">{node.ueberschrift}</h2>
               <p className="pb-8">{node.datum}</p>
 
@@ -53,13 +53,7 @@ export default function Aktuelles() {
                 alt={node.title}
               />
 
-              <ReadMoreReact
-                text={node.text.text}
-                min={80}
-                ideal={100}
-                max={200}
-                readMoreText="mehr..."
-              />
+              <p>{node.text.text}</p>
             </div>
           </div>
         );

@@ -6,11 +6,11 @@ function Impressum({ data }) {
   return (
     <Layout>
       <div>
-        <div className="px-8 bg-creme pt-[256px]">
+        <div className="px-8 bg-gray pt-[256px]">
           <h1 className="py-16">{data.contentfulImpressum.titel}</h1>
           <p className="w-2/3 pb-16">{data.contentfulImpressum.info.info}</p>
         </div>
-        <div className="px-8 bg-green">
+        <div className="px-8 bg-yellow">
           <h1 className="py-16">
             {data.contentfulImpressum.rechtlichesUeberschrift}
           </h1>

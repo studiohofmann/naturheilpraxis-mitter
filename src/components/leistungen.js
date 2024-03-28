@@ -35,7 +35,7 @@ export default function Leistungen() {
   };
 
   return (
-    <div className="bg-green px-8 pt-16 pb-32 -mb-2">
+    <div className="bg-yellow px-8 pt-16 pb-32 -mb-2">
       <h1 className="pb-8">{data.contentfulLeistungen.ueberschrift} </h1>
       <p className="pb-16">
         {data.contentfulLeistungen.beschreibung.beschreibung}
@@ -61,7 +61,9 @@ export default function Leistungen() {
             </h2>
 
             {isOpen[node.ueberschrift] && (
-              <p className="mb-8 px-4">{node.text.text}</p>
+              <p className="bg-gray shadow-lg mb-8 pt-4 pb-8 px-4">
+                {node.text.text}
+              </p>
             )}
           </div>
         );

@@ -15,24 +15,19 @@ export default function Newsletter() {
   `);
 
   return (
-    <div className="text-linkbackground">
+    <div>
       <h2 className="pb-8">{data.contentfulNewsletter.titel}</h2>
-      <p className="pb-8 w-2/3">{data.contentfulNewsletter.text.text}</p>
-      <div className="flex gap-4">
-        <div className="w-2/3">
-          <input
-            type="text"
-            id="fname"
-            name="firstname"
-            placeholder="Email"
-            className="bg-linkbackground text-text w-full h-full p-1"
-          />
-        </div>
-        <div className="grow">
-          <h2 type="submit" className="p-1 bg-linkbackground text-linktext">
-            abonnieren
-          </h2>
-        </div>
+      <p className="pb-8">{data.contentfulNewsletter.text.text}</p>
+      <div className="flex flex-col gap-4 w-full">
+        <input
+          type="text"
+          id="fname"
+          name="firstname"
+          placeholder="Email"
+          className="w-full"
+        />
+
+        <button type="submit">abonnieren</button>
       </div>
     </div>
   );

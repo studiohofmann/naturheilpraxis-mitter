@@ -17,7 +17,7 @@ const Schwerpunkte = ({ data }) => {
 
   return (
     <Layout>
-      <div className="bg-green px-8 pt-[256px] pb-64">
+      <div className="bg-gray px-8 pt-[256px] pb-32">
         <h1 className="py-16">{data.contentfulSchwerpunkte.ueberschrift}</h1>
         <p className="pb-16">
           {data.contentfulSchwerpunkte.beschreibung.beschreibung}

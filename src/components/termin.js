@@ -24,7 +24,7 @@ export default function Termin() {
   `);
 
   return (
-    <div className="bg-creme px-8 pt-16 pb-32">
+    <div className="bg-gray px-8 pt-16 pb-32">
       <h1 className="pb-16 w-2/3">{data.contentfulTermin.ueberschrift}</h1>
       <p className="pb-16">{data.contentfulTermin.beschreibung.beschreibung}</p>
 

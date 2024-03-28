@@ -10,11 +10,11 @@ export default function Footer() {
   const today = new Date();
 
   return (
-    <div className="bg-footer text-creme px-8 pt-16 pb-4">
+    <div className="bg-blue text-creme px-8 pt-16 pb-4">
       <div className="pb-16">
         <Newsletter />
       </div>
-      <div className="flex gap-4 pb-16">
+      <div className="flex gap-4 pb-8">
         <div className="flex flex-col gap-4 w-1/2">
           <Link to="/schwerpunkte" activeClassName="active">
             <h2>Schwerpunkte</h2>

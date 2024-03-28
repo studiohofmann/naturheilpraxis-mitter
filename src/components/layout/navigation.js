@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 export default function Menue() {
   return (
     <div className="absolute w-full flex px-8 pt-8 gap-4">
-      <Link to="/" className="grow z-20 " activeClassName="active">
+      <Link to="/" className="grow z-20" activeClassName="active">
         <h1 className="">
           Praxis
           <br />

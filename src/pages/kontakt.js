@@ -7,7 +7,7 @@ import Anfahrt from "../components/anfahrt";
 const Kontakt = ({ data }) => {
   return (
     <Layout>
-      <div className="pt-[256px] bg-creme">
+      <div className="pt-[256px] bg-gray">
         <div className="px-8">
           <h1 className="py-16">{data.contentfulKontakt.ueberschrift}</h1>
           <p className="pb-16">

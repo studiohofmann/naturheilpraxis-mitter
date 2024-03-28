@@ -40,6 +40,7 @@ h2 {
     @apply text-textcolor;
     @apply py-2;
     @apply px-4;
+    @apply shadow-xl;
   }
 
   a:hover {
@@ -52,4 +53,30 @@ h2 {
   @apply bg-textcolor;
   @apply text-linkbackgroundcolor;
   }
-}
+
+  input{
+    @apply bg-yellow;
+    @apply shadow-xl;
+    @apply py-2;
+    @apply px-4;
+    @apply placeholder-textcolor;
+    
+  }
+
+  button[type="submit"] {
+    @apply bg-linkbackgroundcolor;
+    @apply font-heading;
+    @apply font-bold;
+    @apply text-lg;
+    @apply tracking-wider;  
+    @apply py-2;
+    @apply px-4;
+    @apply shadow-xl;
+  }
+
+  button:hover[type="submit"] {
+    @apply bg-textcolor;
+    @apply text-linkbackgroundcolor;
+    @apply duration-500;
+
+}}

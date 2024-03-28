@@ -17,13 +17,12 @@ module.exports = {
       },
 
       colors: {
-        textcolor: "#6A8D9C",
-        linkbackgroundcolor: "#CBDDE3",
-        gray: "#E3E3D8",
-        yellow: "#E8DBAE",
-        green: "#E1F0DC",
-        creme: "#EDEDE4",
-        footer: "#97A4A8",
+        textcolor: "#3B434A",
+        linkbackgroundcolor: "#99BA99",
+        gray: "#E6E6E6",
+        yellow: "#D6D49F",
+        green: "#E6E6E6",
+        blue: "#6F95B0",
       },
     },
 
