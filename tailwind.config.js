@@ -19,18 +19,19 @@ module.exports = {
       colors: {
         textcolor: "#3B434A",
         linkbackgroundcolor: "#99BA99",
-        gray: "#E6E6E6",
+        gray: "#DBDBDB",
         yellow: "#D6D49F",
         green: "#E6E6E6",
         blue: "#6F95B0",
+        menu: "#E6E6E6",
       },
     },
 
     screens: {
-      tablet: "640px",
+      sm: "640px",
       md: "768px",
-      laptop: "1024px",
-      desktop: "1280px",
+      lg: "1024px",
+      xl: "1280px",
       "2xl": "1536px",
     },
   },

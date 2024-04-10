@@ -7,6 +7,7 @@ module.exports = {
     title: `Naturheilpraxis Mitter`,
     siteUrl: `https://www.yourdomain.tld`,
   },
+
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",

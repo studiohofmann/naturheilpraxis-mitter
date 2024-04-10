@@ -1,7 +1,8 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Link } from "gatsby";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
+import { INLINES } from "@contentful/rich-text-types";
 
 export default function Aktuelles() {
   const data = useStaticQuery(graphql`
@@ -9,7 +10,7 @@ export default function Aktuelles() {
       contentfulAktuelles {
         ueberschrift
         beschreibung {
-          beschreibung
+          raw
         }
       }
 
@@ -30,12 +31,35 @@ export default function Aktuelles() {
     }
   `);
 
+  const options = {
+    renderText: (text) =>
+      text.split("\n").flatMap((text, i) => [i > 0 && <br />, text]),
+    renderNode: {
+      [INLINES.HYPERLINK]: (node, children) => {
+        let anchorAttrs = {};
+
+        if (!node.data.uri.includes("my-domain-name.com")) {
+          anchorAttrs = {
+            target: "_blank",
+            rel: "noopener noreferrer",
+          };
+        }
+
+        return (
+          <a href={node.data.uri} {...anchorAttrs}>
+            {children}
+          </a>
+        );
+      },
+    },
+  };
+
   return (
-    <div className="bg-gray px-8 pt-16 pb-32">
+    <div className="bg-gray px-8 pt-16 pb-32 lg:w-3/4 lg:float-right">
       <div className="">
         <h1 className="mb-8">{data.contentfulAktuelles.ueberschrift}</h1>
         <p className="mb-16">
-          {data.contentfulAktuelles.beschreibung.beschreibung}
+          {renderRichText(data.contentfulAktuelles.beschreibung, options)}
         </p>
       </div>
 
@@ -43,9 +67,9 @@ export default function Aktuelles() {
         const singleImage = getImage(node.bild);
         return (
           <div>
-            <div key={i} className="bg-yellow shadow-xl px-4 pt-4 pb-8">
+            <div key={i} className="bg-yellow shadow-xl px-4 pt-4 pb-4">
               <h2 className="pb-4">{node.ueberschrift}</h2>
-              <p className="pb-8">{node.datum}</p>
+              <p className="pb-4">{node.datum}</p>
 
               <GatsbyImage
                 className="mb-4"

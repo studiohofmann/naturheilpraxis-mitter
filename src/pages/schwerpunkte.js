@@ -5,6 +5,8 @@ import Layout from "../components/layout/layout";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { IoIosAdd } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
+import { renderRichText } from "gatsby-source-contentful/rich-text";
+import { INLINES } from "@contentful/rich-text-types";
 
 const Schwerpunkte = ({ data }) => {
   const [isOpen, setIsOpen] = useState({});
@@ -15,12 +17,35 @@ const Schwerpunkte = ({ data }) => {
     });
   };
 
+  const options = {
+    renderText: (text) =>
+      text.split("\n").flatMap((text, i) => [i > 0 && <br />, text]),
+    renderNode: {
+      [INLINES.HYPERLINK]: (node, children) => {
+        let anchorAttrs = {};
+
+        if (!node.data.uri.includes("my-domain-name.com")) {
+          anchorAttrs = {
+            target: "_blank",
+            rel: "noopener noreferrer",
+          };
+        }
+
+        return (
+          <a href={node.data.uri} {...anchorAttrs}>
+            {children}
+          </a>
+        );
+      },
+    },
+  };
+
   return (
     <Layout>
-      <div className="bg-gray px-8 pt-[256px] pb-32">
+      <div className="bg-gray px-8 pt-[256px] lg:pt-0 pb-32 lg:w-3/4 lg:float-right">
         <h1 className="py-16">{data.contentfulSchwerpunkte.ueberschrift}</h1>
         <p className="pb-16">
-          {data.contentfulSchwerpunkte.beschreibung.beschreibung}
+          {renderRichText(data.contentfulSchwerpunkte.beschreibung, options)}
         </p>
 
         {data.allContentfulSchwerpunktepost.edges.map(({ node }, i) => {
@@ -44,14 +69,14 @@ const Schwerpunkte = ({ data }) => {
               </h2>
 
               {isOpen[node.ueberschrift] && (
-                <div>
+                <div className="bg-yellow shadow-xl pt-4 mb-4">
                   <GatsbyImage
-                    className="mb-4 mx-4"
+                    className="mx-4"
                     image={singleImage}
                     alt={node.title}
                   />
 
-                  <p className="mb-8 px-4">{node.text.text}</p>
+                  <p className="px-4 py-4">{node.text.text}</p>
                 </div>
               )}
             </div>
@@ -67,7 +92,7 @@ export const query = graphql`
     contentfulSchwerpunkte {
       ueberschrift
       beschreibung {
-        beschreibung
+        raw
       }
     }
     allContentfulSchwerpunktepost {
